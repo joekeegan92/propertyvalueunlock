@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilities & Access for Lot Splits in Illinois | Property Value Unlock</title>
+<meta name="description" content="Even if your Illinois property clears frontage, utilities and access are where most lot splits still fail. Find out if your property passes this second major gate before you go further.">
+<link rel="canonical" href="https://propertyvalueunlock.com/utilities-and-access">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #141414;
+    --ink-soft: #3a3a3a;
+    --ink-muted: #6b6b6b;
+    --ink-faint: #999;
+    --rule: #e2e0da;
+    --bg: #f8f7f4;
+    --bg-warm: #f2f0eb;
+    --bg-card: #ffffff;
+    --gold: #b8975a;
+    --gold-light: #d4b47a;
+    --gold-bg: #f9f5ee;
+    --accent-green: #2d5a3d;
+    --radius: 4px;
+    --radius-card: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+    --shadow-hover: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── HEADER ─────────────────────────────────────────── */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248,247,244,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 clamp(20px, 5vw, 64px);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-phone {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .header-phone:hover { color: var(--gold); }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 11px 22px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-green);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary.gold {
+    background: var(--gold);
+    color: #fff;
+  }
+
+  .btn-primary.gold:hover {
+    background: #9a7d48;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 11px 22px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-outline:hover {
+    background: var(--ink);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* ─── HERO ────────────────────────────────────────────── */
+
+  .hero {
+    padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px);
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(184,151,90,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1.5px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .hero-bullets {
+    list-style: none;
+    margin-bottom: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .hero-bullets li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-ctas .btn-primary {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
+
+  .hero-phone-cta {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    transition: color 0.2s;
+  }
+
+  .hero-phone-cta:hover { color: var(--gold); }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .hero-stat-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateX(-3px);
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gold-bg);
+    border: 1px solid rgba(184,151,90,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+
+  .stat-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .stat-text span {
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .hero-badge {
+    margin-top: 6px;
+    background: var(--accent-green);
+    color: #fff;
+    border-radius: var(--radius-card);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-badge-icon { font-size: 22px; }
+
+  .hero-badge-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .hero-badge-text span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ─── GATE BANNER ─────────────────────────────────────── */
+
+  .gate-banner {
+    background: var(--ink);
+    padding: clamp(32px, 4vw, 52px) clamp(20px, 5vw, 64px);
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .gate-banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .gate-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .gate-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.04em;
+  }
+
+  .gate-step.active {
+    color: #fff;
+  }
+
+  .gate-step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: 'Playfair Display', serif;
+    flex-shrink: 0;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .gate-step.active .gate-step-num {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+  }
+
+  .gate-step.done .gate-step-num {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.35);
+  }
+
+  .gate-step.done .gate-step-label {
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,255,255,0.2);
+  }
+
+  .gate-connector {
+    width: 1px;
+    height: 14px;
+    background: rgba(255,255,255,0.12);
+    margin-left: 12px;
+  }
+
+  .gate-message {
+    border-left: 2px solid var(--gold);
+    padding-left: 28px;
+  }
+
+  .gate-message h3 {
+    color: #fff;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .gate-message p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  /* ─── SECTION LAYOUT ──────────────────────────────────── */
+
+  section {
+    padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px);
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  /* ─── CLARITY SECTION ─────────────────────────────────── */
+
+  .clarity {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .clarity .section-label { color: var(--gold-light); }
+  .clarity .section-title { color: #fff; }
+
+  .clarity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  .clarity-copy p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+
+  .clarity-copy p:last-child { margin-bottom: 0; }
+  .clarity-copy strong { color: #fff; font-weight: 500; }
+
+  .clarity-points {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .clarity-point {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .clarity-point-q {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .clarity-point-a {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ─── ASSUMPTION BREAK ────────────────────────────────── */
+
+  .assumptions { background: var(--bg-warm); }
+
+  .assumption-list {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .assumption-row {
+    background: var(--bg-card);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    transition: background 0.18s;
+  }
+
+  .assumption-row:hover { background: var(--gold-bg); }
+
+  .assumption-false {
+    padding: 28px 32px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .assumption-false-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 8px;
+  }
+
+  .assumption-false p {
+    font-size: 15px;
+    color: var(--ink-muted);
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  .assumption-true {
+    padding: 28px 32px;
+  }
+
+  .assumption-true-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    margin-bottom: 8px;
+  }
+
+  .assumption-true p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* ─── FACTORS SECTION ─────────────────────────────────── */
+
+  .factors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    margin-top: 48px;
+  }
+
+  .factor-cell {
+    background: var(--bg-card);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+
+  .factor-cell:hover { background: var(--gold-bg); }
+
+  .factor-num {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .factor-cell h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .factor-cell p {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .factor-shutdown {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c0392b;
+    background: rgba(192,57,43,0.07);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  /* ─── EXAMPLES SECTION ────────────────────────────────── */
+
+  .scenarios { background: var(--bg-warm); }
+
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 28px 26px;
+    cursor: default;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .scenario-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(184,151,90,0.3);
+    transform: translateY(-2px);
+  }
+
+  .scenario-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+
+  .scenario-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .scenario-card p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .scenario-outcome {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    font-weight: 600;
+    color: #c0392b;
+  }
+
+  /* ─── VARIATION SECTION ───────────────────────────────── */
+
+  .variation {
+    background: var(--bg);
+    border-top: 1px solid var(--rule);
+  }
+
+  .variation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .variation-card {
+    border-left: 2px solid var(--gold);
+    padding: 4px 0 4px 20px;
+  }
+
+  .variation-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .variation-card p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── HARD TRUTH SECTION ──────────────────────────────── */
+
+  .hard-truth {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .hard-truth .section-label { color: var(--gold-light); }
+  .hard-truth .section-title { color: #fff; }
+  .hard-truth .section-sub { color: rgba(255,255,255,0.6); }
+
+  .hard-truth-close {
+    margin-top: 48px;
+    padding: 28px 32px;
+    background: rgba(184,151,90,0.12);
+    border: 1px solid rgba(184,151,90,0.25);
+    border-radius: var(--radius-card);
+    font-size: 16px;
+    color: var(--gold-light);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  /* ─── REFRAME SECTION ─────────────────────────────────── */
+
+  .reframe { background: var(--bg-warm); }
+
+  .reframe-inner { max-width: 800px; }
+
+  .reframe-old {
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--ink-muted);
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: line-through;
+    text-decoration-color: rgba(184,151,90,0.5);
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+
+  .reframe-arrow {
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .reframe-new {
+    font-size: clamp(22px, 2.5vw, 32px);
+    color: var(--ink);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  .reframe-new em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ─── OFFER SECTION ───────────────────────────────────── */
+
+  .offer { background: var(--bg-warm); }
+
+  .offer-inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  .offer-box {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .offer-box-header {
+    background: var(--ink);
+    padding: 22px 28px;
+  }
+
+  .offer-box-header h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .offer-box-header p {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 300;
+  }
+
+  .offer-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .offer-list li {
+    padding: 16px 28px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .offer-list li:last-child { border-bottom: none; }
+
+  .offer-list li .check {
+    color: var(--accent-green);
+    font-size: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .offer-list.not li .check { color: #c0392b; }
+
+  /* ─── PROCESS SECTION ─────────────────────────────────── */
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(16.67% + 20px);
+    right: calc(16.67% + 20px);
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .process-step { text-align: center; position: relative; }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--gold);
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .process-step p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── TRUST SECTION ───────────────────────────────────── */
+
+  .trust-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .trust-pillar {
+    border-left: 2px solid var(--gold);
+    padding: 4px 0 4px 20px;
+  }
+
+  .trust-pillar h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .trust-pillar p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .trust-statement {
+    margin-top: 64px;
+    padding: 44px 48px;
+    background: var(--gold-bg);
+    border: 1px solid rgba(184,151,90,0.2);
+    border-radius: var(--radius-card);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .trust-statement blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .trust-statement cite {
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ─── FINAL CTA SECTION ───────────────────────────────── */
+
+  .final-cta {
+    background: var(--ink);
+    text-align: center;
+    padding: clamp(80px, 10vw, 128px) clamp(20px, 5vw, 64px);
+  }
+
+  .final-cta .section-label { color: var(--gold-light); }
+
+  .final-cta h2 {
+    color: #fff;
+    font-size: clamp(30px, 4vw, 52px);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  .final-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 44px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .final-cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .final-cta .btn-primary {
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  .cta-phone-line {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 24px;
+  }
+
+  .cta-phone-line a {
+    color: var(--gold-light);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .cta-phone-line a:hover { color: #fff; }
+
+  /* ─── ANIMATIONS ──────────────────────────────────────── */
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.34s; }
+  .delay-4 { animation-delay: 0.46s; }
+  .delay-5 { animation-delay: 0.58s; }
+
+  /* ─── TOP NAV ──────────────────────────────────────────── */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .site-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    padding: 6px 10px;
+    border-radius: 3px;
+    transition: color 0.18s, background 0.18s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover { color: var(--ink); background: var(--bg-warm); }
+  .site-nav a.nav-active {
+    color: var(--ink);
+    background: var(--bg-warm);
+    font-weight: 600;
+  }
+  .site-nav .nav-cta {
+    background: var(--gold);
+    color: #fff !important;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    transition: background 0.18s;
+  }
+  .site-nav .nav-cta:hover { background: #9a7d48; }
+
+  /* mobile nav */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--ink-muted);
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: all 0.2s;
+  }
+  .mobile-nav-panel {
+    display: none;
+    position: fixed;
+    inset: 68px 0 auto 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 24px 20px;
+    z-index: 99;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .mobile-nav-panel.is-open { display: block; }
+  .mobile-nav-panel a,
+  .mobile-nav-panel button {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-align: left;
+    width: 100%;
+    transition: color 0.18s;
+  }
+  .mobile-nav-panel a:last-child,
+  .mobile-nav-panel button:last-child { border-bottom: none; }
+  .mobile-nav-panel a:hover,
+  .mobile-nav-panel button:hover { color: var(--gold); }
+  .mobile-nav-panel a.nav-active { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .site-nav { display: none; }
+    .mobile-menu-btn { display: flex; }
+  }
+
+  /* ─── RELATED SITUATIONS ───────────────────────────────── */
+  .related-situations {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--rule);
+    padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 64px);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .related-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .related-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(184,151,90,0.35);
+    transform: translateY(-2px);
+  }
+  .related-card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .related-card-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+
+  /* ─── FOOTER ──────────────────────────────────────────── */
+  .pvu-footer {
+    background: #0e0e0e;
+    padding: 52px clamp(20px, 5vw, 64px) 32px;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+  }
+  .pvu-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .pvu-footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+  }
+  .pvu-footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    max-width: 260px;
+  }
+  .pvu-footer-col h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .pvu-footer-col ul { list-style: none; }
+  .pvu-footer-col ul li { margin-bottom: 9px; }
+  .pvu-footer-col ul li a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+  }
+  .pvu-footer-col ul li a:hover { color: rgba(255,255,255,0.8); }
+  .pvu-footer-phone {
+    color: rgba(255,255,255,0.7) !important;
+    font-weight: 500;
+  }
+  .pvu-footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin: 36px auto 20px;
+    max-width: 1200px;
+  }
+  .pvu-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.22);
+    line-height: 1.65;
+  }
+  .pvu-footer-legal { max-width: 640px; }
+
+  /* ─── MODAL ───────────────────────────────────────────── */
+  .review-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(14,14,14,0.72);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .review-modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .review-modal {
+    background: var(--bg-card);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+    transform: translateY(16px) scale(0.985);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+  .review-modal-backdrop.is-open .review-modal {
+    transform: translateY(0) scale(1);
+  }
+  .review-modal-header {
+    padding: 32px 36px 24px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .review-modal-header .modal-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .review-modal-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .review-modal-header p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 460px;
+  }
+  .modal-close {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--bg-card);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 18px;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+  .modal-close:hover {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+  .review-modal-body { padding: 28px 36px 36px; }
+  .review-modal-body iframe {
+    display: block;
+    width: 100%;
+    min-height: 520px;
+    border: none;
+  }
+
+  /* ─── RESPONSIVE ──────────────────────────────────────── */
+
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { display: none; }
+    .clarity-grid { grid-template-columns: 1fr; gap: 40px; }
+    .factors-grid { grid-template-columns: repeat(2, 1fr); }
+    .scenarios-grid { grid-template-columns: 1fr; }
+    .offer-inner-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 24px; }
+    .process-steps::before { display: none; }
+    .trust-pillars { grid-template-columns: repeat(2, 1fr); }
+    .variation-grid { grid-template-columns: repeat(2, 1fr); }
+    .gate-banner-inner { grid-template-columns: 1fr; gap: 28px; }
+    .gate-steps { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+    .gate-connector { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .factors-grid { grid-template-columns: 1fr; }
+    .trust-pillars { grid-template-columns: 1fr; }
+    .trust-statement { padding: 32px 24px; }
+    .hero-ctas { flex-direction: column; align-items: flex-start; }
+    .final-cta-buttons { flex-direction: column; }
+    .assumption-row { grid-template-columns: 1fr; }
+    .assumption-false { border-right: none; border-bottom: 1px solid var(--rule); }
+    .variation-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+    .pvu-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .pvu-footer-bottom { flex-direction: column; gap: 10px; }
+    .review-modal-header { padding: 24px 20px 20px; }
+    .review-modal-body { padding: 20px 20px 28px; }
+    .modal-close { top: 16px; right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HEADER ─────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-name">Property Value Unlock</span>
+      <span class="logo-sub">Suburban Illinois Land Review</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/can-i-split-my-property">Can I Split My Property</a>
+      <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+      <a href="/how-much-is-my-land-worth">Land Value</a>
+      <a href="/my-house-is-on-two-lots">Two Lots</a>
+      <button class="nav-cta" data-open-review="true">Get Clarity</button>
+    </nav>
+    <div class="header-right">
+      <a href="tel:2244079500" class="header-phone">224-407-9500</a>
+      <button class="btn-primary" data-open-review="true">Get a Real Answer on Your Property</button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="/can-i-split-my-property">Can I Split My Property</a>
+  <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+  <a href="/how-much-is-my-land-worth">Land Value</a>
+  <a href="/my-house-is-on-two-lots">Two Lots</a>
+  <button data-open-review="true">Get Clarity</button>
+</div>
+
+<!-- ─── HERO ────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-up">Utilities &amp; Access — The Second Gate</p>
+      <h1 class="fade-up delay-1">Your lot may clear frontage. Utilities and access are where <em>most splits still fail.</em></h1>
+      <p class="hero-sub fade-up delay-2">Frontage is the first gate. This is the second — and it catches a large share of properties that look viable right up until someone actually checks. Each resulting lot must have its own utility connections and its own legal access to a public road. Neither can be assumed, shared, or figured out later. Most owners who find this out discover it after they've already paid for something that depended on the answer.</p>
+      <ul class="hero-bullets fade-up delay-3">
+        <li>Every lot created in a split must independently connect to sewer or have a viable septic solution — proximity to a sewer line is not the same as access to it</li>
+        <li>Water, gas, and electrical service must be available and routable to each parcel specifically — not just to the block</li>
+        <li>Legal access to a public road must exist for each lot — physical access across your own property does not count</li>
+        <li>Septic limitations can block a split entirely on lots where municipal sewer isn't available</li>
+        <li>This is where assumptions break down — and where owners who haven't verified discover it too late</li>
+      </ul>
+      <div class="hero-ctas fade-up delay-4">
+        <button class="btn-primary gold" data-open-review="true">Check Utilities &amp; Access on My Property &rarr;</button>
+        <a href="tel:2244079500" class="hero-phone-cta">or call 224-407-9500</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up delay-3">
+      <div class="hero-card-stack">
+        <div class="hero-stat-card">
+          <div class="stat-icon">🚰</div>
+          <div class="stat-text">
+            <strong>Sewer &amp; Water — Per Parcel, Not Per Block</strong>
+            <span>Being near the main is not the same as having a viable connection path</span>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-icon">🛣️</div>
+          <div class="stat-text">
+            <strong>Legal Access — Recorded, Not Assumed</strong>
+            <span>Walking to the back lot is not legal access to build or sell independently</span>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-text">
+            <strong>Septic Constraints Can Close the Path Entirely</strong>
+            <span>Lot size, soil conditions, and municipal rules determine whether septic is even an option</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon">✓</div>
+          <div class="hero-badge-text">
+            <strong>This Is the Step After Frontage — Not Before It</strong>
+            <span>If frontage cleared, this is what needs to be verified next.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GATE BANNER ────────────────────────────────────── -->
+<div class="gate-banner">
+  <div class="gate-banner-inner">
+    <div class="gate-steps">
+      <div class="gate-step done">
+        <div class="gate-step-num">1</div>
+        <span class="gate-step-label">Frontage &amp; Lot Width</span>
+      </div>
+      <div class="gate-connector"></div>
+      <div class="gate-step active">
+        <div class="gate-step-num">2</div>
+        <span class="gate-step-label">Utilities &amp; Access</span>
+      </div>
+      <div class="gate-connector"></div>
+      <div class="gate-step">
+        <div class="gate-step-num">3</div>
+        <span class="gate-step-label">Zoning &amp; Approval</span>
+      </div>
+    </div>
+    <div class="gate-message">
+      <h3>Where deals still fall apart — even after frontage clears.</h3>
+      <p>Many properties clear the first gate. Frontage meets minimums. Lot size looks sufficient. And then utilities or access closes the path. This is the second major constraint, and it operates independently of everything that came before it. A significant number of properties that pass frontage fail at this stage — and the owners rarely expect it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CLARITY SECTION ────────────────────────────────── -->
+<section class="clarity">
+  <div class="section-inner">
+    <p class="section-label">Why This Is the Second Major Failure Point</p>
+    <h2 class="section-title">Frontage is necessary. It is not sufficient. Utilities and access are where assumptions break down.</h2>
+    <div class="clarity-grid">
+      <div class="clarity-copy">
+        <p>A lot can meet every frontage requirement — width, depth, square footage — and still be completely undevelopable because utilities cannot reach the new parcel or legal access cannot be established. <strong>These two constraints operate independently of frontage, and they don't show up on aerial views or basic property records.</strong></p>
+        <p>Most owners who've confirmed frontage assume the hard part is done. It isn't. Utilities require specific infrastructure: available tap points, serviceable routes, and in many cases municipal sign-off. Access requires recorded legal rights — not just proximity to a road. <strong>Neither is guaranteed by zoning, lot size, or the presence of development nearby.</strong></p>
+        <p>What makes this the second gate — not a footnote — is that it determines whether anything downstream is even worth pursuing. Surveys, attorney fees, permit applications: all of it depends on utilities and access being confirmed first. Owners who skip this step and proceed anyway tend to find out the hard way.</p>
+      </div>
+      <div class="clarity-points">
+        <div class="clarity-point">
+          <p class="clarity-point-q">What does "utilities and access" actually mean for a lot split?</p>
+          <p class="clarity-point-a">Each resulting lot must be independently serviceable — its own sewer or septic, its own water connection, its own legal road access. Not shared. Not borrowed from the parent parcel. Independent. If any one of those can't be established, the split cannot produce a buildable lot.</p>
+        </div>
+        <div class="clarity-point">
+          <p class="clarity-point-q">Why does this come up after frontage and not before?</p>
+          <p class="clarity-point-a">Frontage is the more visible constraint — it's evaluated from lot dimensions that are readily accessible. Utility and access constraints require checking infrastructure maps, easement records, and municipal requirements specific to the parcel. They're discovered later in the process, which is exactly why they catch people off guard.</p>
+        </div>
+        <div class="clarity-point">
+          <p class="clarity-point-q">Can these issues ever be resolved after the fact?</p>
+          <p class="clarity-point-a">Sometimes. Utility extensions can be engineered — but at a cost that may make the deal economically irrational. Easements can occasionally be negotiated — but that depends on neighboring owners agreeing. Hard infrastructure limits and landlocked parcels often cannot be resolved at all. The question is what you're dealing with specifically.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ASSUMPTION BREAK ───────────────────────────────── -->
+<section class="assumptions">
+  <div class="section-inner">
+    <p class="section-label">Reality vs. Assumption</p>
+    <h2 class="section-title">The assumptions that most often lead owners down the wrong path.</h2>
+    <p class="section-sub">These are the four most common misreads — each one sounds reasonable, each one has ended deals that should have been caught earlier.</p>
+    <div class="assumption-list">
+      <div class="assumption-row">
+        <div class="assumption-false">
+          <p class="assumption-false-label">Common assumption</p>
+          <p>"Utilities can be added later — the lot comes first."</p>
+        </div>
+        <div class="assumption-true">
+          <p class="assumption-true-label">What's actually true</p>
+          <p>A lot without viable utility service is not a buildable lot — it's land. Municipalities will not approve a subdivision that produces a parcel with no serviceable path to sewer, water, or both. The utilities question must be answered before a split can proceed, not after.</p>
+        </div>
+      </div>
+      <div class="assumption-row">
+        <div class="assumption-false">
+          <p class="assumption-false-label">Common assumption</p>
+          <p>"I can just run a line from the existing house."</p>
+        </div>
+        <div class="assumption-true">
+          <p class="assumption-true-label">What's actually true</p>
+          <p>Once parcels are split, they are separate properties. Tying a new lot's utilities to the existing home's connection creates a dependency that municipalities generally will not permit. Each lot needs its own independent connection — which requires its own available tap point and a viable route to reach it.</p>
+        </div>
+      </div>
+      <div class="assumption-row">
+        <div class="assumption-false">
+          <p class="assumption-false-label">Common assumption</p>
+          <p>"Septic can be figured out — other properties use it."</p>
+        </div>
+        <div class="assumption-true">
+          <p class="assumption-true-label">What's actually true</p>
+          <p>Septic viability depends on lot size minimums, soil percolation results, setback requirements, and local health department rules. A neighboring property on septic does not mean your split parcel qualifies. In many suburban Illinois communities, the new lot may not meet minimum size requirements for a system at all.</p>
+        </div>
+      </div>
+      <div class="assumption-row">
+        <div class="assumption-false">
+          <p class="assumption-false-label">Common assumption</p>
+          <p>"There's access — I can get to the back of the lot."</p>
+        </div>
+        <div class="assumption-true">
+          <p class="assumption-true-label">What's actually true</p>
+          <p>Physical access and legal access are not the same thing. Walking to the back of your property across your own land is not a legal right of way. A new lot must have recorded legal access to a public road — either direct frontage or an easement — before it can be permitted, sold, or developed. Without that, it cannot function as an independent buildable parcel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CORE FACTORS SECTION ──────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">The Factors That Determine What's Possible</p>
+    <h2 class="section-title">Each of these can shut a deal down — independently of everything else.</h2>
+    <p class="section-sub">Any one of these failing is sufficient to close the path. They don't offset each other. A clear water connection doesn't compensate for no sewer access. Legal road frontage doesn't resolve a septic limitation. Each factor must clear on its own.</p>
+    <div class="factors-grid">
+      <div class="factor-cell">
+        <p class="factor-num">01</p>
+        <h4>Sewer vs. Septic</h4>
+        <p>In areas served by municipal sewer, the new parcel must be able to connect — which requires an available tap, a routable path, and often municipal approval. In areas without sewer, a septic system must be viable: the lot must be large enough, the soil must pass testing, and the health department must approve. When neither works, the lot cannot support development.</p>
+        <span class="factor-shutdown">Can shut the deal down entirely</span>
+      </div>
+      <div class="factor-cell">
+        <p class="factor-num">02</p>
+        <h4>Water Access</h4>
+        <p>Being located near a water main is not the same as having access to it. Connection requires an available tap point and a serviceable route. Well alternatives involve groundwater testing, setback requirements, and lot size minimums — none of which are guaranteed by proximity to developed properties. This is verified per parcel, not per neighborhood.</p>
+        <span class="factor-shutdown">Can shut the deal down entirely</span>
+      </div>
+      <div class="factor-cell">
+        <p class="factor-num">03</p>
+        <h4>Utility Extension Feasibility</h4>
+        <p>Sometimes connections are technically possible but require crossing easements, other properties, or significant infrastructure at the owner's cost. Extension may be achievable — but the cost to run lines to a new parcel can make the deal economically indefensible even when it's technically legal. This math has ended otherwise viable deals.</p>
+        <span class="factor-shutdown">Can render the deal economically unworkable</span>
+      </div>
+      <div class="factor-cell">
+        <p class="factor-num">04</p>
+        <h4>Road Frontage vs. Usable Legal Access</h4>
+        <p>Direct road frontage is the cleanest solution. When it doesn't exist, a recorded easement may substitute — but that easement must be negotiated with adjoining property owners, recorded with the county, and approved by the municipality. None of those steps are guaranteed, and in many situations they aren't available at all.</p>
+        <span class="factor-shutdown">Can shut the deal down entirely</span>
+      </div>
+      <div class="factor-cell">
+        <p class="factor-num">05</p>
+        <h4>Physical vs. Legal Access</h4>
+        <p>This is the distinction most owners don't know to make until it's too late. A parcel you can physically reach across your own yard cannot be permitted, sold as an independent lot, or developed without recorded legal access. The municipality will not approve a subdivision that produces a landlocked parcel. This distinction matters enormously, and it surfaces late for most owners.</p>
+        <span class="factor-shutdown">Hard stop — no workaround without recorded easement</span>
+      </div>
+      <div class="factor-cell">
+        <p class="factor-num">06</p>
+        <h4>Property-Specific Conditions</h4>
+        <p>Grading, drainage, existing easements, lot geometry, and infrastructure layout all affect what utilities can reach and how. Neighboring properties using well and septic does not mean your parcel qualifies. Utilities running down the street does not mean a tap is available. Each property requires its own evaluation. Suburban Illinois lot splits for utilities cannot be answered with general rules.</p>
+        <span class="factor-shutdown">No generic answer applies — property-specific only</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXAMPLES SECTION ───────────────────────────────── -->
+<section class="scenarios">
+  <div class="section-inner">
+    <p class="section-label">How This Actually Plays Out</p>
+    <h2 class="section-title">What it looks like when utilities and access close the path on a property that passed frontage.</h2>
+    <p class="section-sub">These aren't edge cases. They appear regularly on suburban Illinois properties that looked completely viable until the utilities and access questions were asked.</p>
+    <div class="scenarios-grid">
+      <div class="scenario-card">
+        <p class="scenario-eyebrow">Scenario — Sewer Connection Fails</p>
+        <h4>The lot width and depth clear the municipality's minimum. Zoning permits a second home. Sewer runs down the adjacent street.</h4>
+        <p>The parcel is narrow and positioned such that the only viable sewer route would cross a neighboring property. No easement exists. The neighbor is unwilling to grant one. The sewer main on the far side of the street is at capacity. Municipal engineering won't approve the extension. The lot cannot produce an independent connection.</p>
+        <p class="scenario-outcome">Result: Deal closed at the sewer connection stage — after frontage had cleared.</p>
+      </div>
+      <div class="scenario-card">
+        <p class="scenario-eyebrow">Scenario — Septic Limitation</p>
+        <h4>A larger suburban lot — nearly a third of an acre on the split parcel — looks more than sufficient. The area has no municipal sewer.</h4>
+        <p>The local health department requires a minimum lot size for new septic systems that exceeds what the split would produce. A soil percolation test reveals poor drainage conditions. The new parcel cannot support a system of any configuration. Without sewer access and without a viable septic alternative, the split cannot produce a buildable lot regardless of lot size, zoning, or frontage.</p>
+        <p class="scenario-outcome">Result: Hard stop. Neither option — sewer or septic — is available for this parcel.</p>
+      </div>
+      <div class="scenario-card">
+        <p class="scenario-eyebrow">Scenario — Landlocked Back Parcel</p>
+        <h4>A large rear parcel. Utilities are available. The lot is big enough. Frontage on the main road doesn't reach the back portion.</h4>
+        <p>The split would produce a rear parcel with no direct road frontage. The owner assumed they could use a strip of the existing driveway as access. That pathway is on the existing lot — and once split, it belongs to a separate property. Creating an easement requires both lots to be under the same ownership at the time of recording, and the municipality requires the easement to be a minimum width the driveway strip doesn't meet. The back parcel is effectively landlocked.</p>
+        <p class="scenario-outcome">Result: Access cannot be legally established. The rear parcel is not independently developable.</p>
+      </div>
+      <div class="scenario-card">
+        <p class="scenario-eyebrow">Scenario — Extension Too Costly</p>
+        <h4>The split is technically viable. Zoning clears. Frontage clears. Utility access is possible — it just requires extension.</h4>
+        <p>Municipal sewer is available, but the nearest tap is 280 feet away and must be extended under a paved road. The owner is responsible for the full cost. Engineering estimates come in between $60,000 and $90,000 for the extension alone — before any site work, construction, or soft costs. The resulting lot, based on comparable sales, would generate $140,000. After extension costs and transaction expenses, the project no longer makes financial sense.</p>
+        <p class="scenario-outcome">Result: Technically possible. Economically irrational. The deal stops here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MUNICIPAL VARIATION SECTION ──────────────────── -->
+<section class="variation">
+  <div class="section-inner">
+    <p class="section-label">Why Assumptions Don't Transfer Between Properties</p>
+    <h2 class="section-title">Utility availability and access requirements vary significantly across suburban Illinois.</h2>
+    <p class="section-sub">What applied to your neighbor's property — or to a lot you heard about in another suburb — may not apply to yours. Infrastructure conditions and municipal rules differ enough that each property needs its own evaluation.</p>
+    <div class="variation-grid">
+      <div class="variation-card">
+        <h4>Sewer Coverage Varies by Municipality and by Block</h4>
+        <p>Some suburban Illinois communities have sewer throughout. Others are partially served — with coverage varying block by block or even lot by lot. A property two streets away being on sewer does not establish that your parcel can connect. Tap availability and route feasibility are determined per parcel, not per neighborhood.</p>
+      </div>
+      <div class="variation-card">
+        <h4>Septic Rules Differ by Jurisdiction</h4>
+        <p>Minimum lot sizes for new septic systems, setback requirements from structures and lot lines, and soil testing standards all vary by county health department and municipality. Illinois counties do not operate under a single uniform standard. What passed in one suburb may fail in the next. This is verified through the specific jurisdiction, not assumed from comparable situations.</p>
+      </div>
+      <div class="variation-card">
+        <h4>Semi-Rural Suburbs Have Different Infrastructure Realities</h4>
+        <p>Communities at the edge of suburban development often lack the infrastructure density of established suburbs. Sewer mains may not extend to the property. Water service may require well permitting. Road access may involve unpaved private roads with easement complications that don't exist in established subdivisions. The constraints that rarely appear in mature suburbs appear more frequently in transitional areas.</p>
+      </div>
+      <div class="variation-card">
+        <h4>Access Rules Are Municipal, Not Universal</h4>
+        <p>Minimum easement widths, requirements for easement recording, and whether shared access is permitted vary by municipality. Some communities require dedicated road frontage for each lot — no easement substitute. Others permit access easements but with specific width and recording requirements. The rules that applied in one community review do not transfer to the next.</p>
+      </div>
+      <div class="variation-card">
+        <h4>Extension Cost and Responsibility Varies</h4>
+        <p>When utilities require extension to a new parcel, who bears the cost and under what conditions differs by municipality and utility district. Some allow cost-sharing. Others require the owner to bear the full cost of main extension. These distinctions significantly affect whether a technically possible extension is economically viable — and they can't be assumed from outside the specific municipality.</p>
+      </div>
+      <div class="variation-card">
+        <h4>Infrastructure Assumptions Don't Transfer</h4>
+        <p>The most common pattern: an owner compares their situation to a neighbor who split, or a property they read about in another suburb, and assumes the same infrastructure conditions apply. They often don't. Nearby properties can have different tap availability, different sewer capacity, different setback conditions. Each property requires its own infrastructure review.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REFRAME SECTION ───────────────────────────────── -->
+<section class="reframe">
+  <div class="section-inner">
+    <div class="reframe-inner">
+      <p class="section-label">The Right Question to Ask Next</p>
+      <p class="reframe-old">"Frontage cleared — the rest is details I can sort out as I go."</p>
+      <span class="reframe-arrow">↓</span>
+      <p class="reframe-new">The question that determines whether anything downstream is worth pursuing: <em>can each resulting lot be independently served with utilities and reached by legal access — specifically, on this property?</em></p>
+      <p style="margin-top:32px; font-size:17px; color:var(--ink-soft); line-height:1.7; font-weight:300; max-width:640px;">This is not a detail. It's the foundation that surveys, attorneys, and municipal applications all depend on. Finding out that utilities or access can't support a split after those steps have been taken means paying for the answer twice. Verifying it now — when it's inexpensive to check — is what separates owners who moved forward clearly from those who didn't.</p>
+      <div style="margin-top:32px;">
+        <button class="btn-primary gold" data-open-review="true">Find Out If Utilities &amp; Access Support Your Property &rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEW OFFER SECTION ──────────────────────────── -->
+<section class="offer" id="review">
+  <div class="section-inner">
+    <p class="section-label">The Review</p>
+    <h2 class="section-title">Utilities &amp; Access — Property-Specific Review</h2>
+    <p class="section-sub">A property-specific evaluation of whether your land can actually be served with utilities and accessed legally — for each lot the split would produce. This is the next thing to confirm after frontage. Everything else in the path depends on it.</p>
+    <p style="font-size:14px; color:var(--ink-muted); margin-top:14px; font-style:italic;">Every review is based on a specific property. We do not provide general answers without an address.</p>
+    <div class="offer-inner-grid">
+      <div class="offer-box">
+        <div class="offer-box-header">
+          <h3>What this review determines</h3>
+          <p>Property-specific answers — not general direction</p>
+        </div>
+        <ul class="offer-list">
+          <li><span class="check">✓</span>Whether sewer or a viable septic alternative exists for the new parcel — not just the block, but the specific lot</li>
+          <li><span class="check">✓</span>Whether water service can be independently established for each resulting parcel</li>
+          <li><span class="check">✓</span>Whether utility extension is feasible — and at what approximate cost and complexity</li>
+          <li><span class="check">✓</span>Whether legal access to a public road exists or can be established — not just physical proximity</li>
+          <li><span class="check">✓</span>What specifically is blocking the path — and whether it is fixable or a hard stop</li>
+          <li><span class="check">✓</span>Honest direction on whether pursuing this further makes sense given what the review finds</li>
+        </ul>
+      </div>
+      <div class="offer-box">
+        <div class="offer-box-header" style="background: #3a3a3a;">
+          <h3>This review is not for</h3>
+          <p>We want to be direct about scope</p>
+        </div>
+        <ul class="offer-list not">
+          <li><span class="check">✗</span>Properties located outside suburban Illinois</li>
+          <li><span class="check">✗</span>General questions about utilities or access not tied to a specific address</li>
+          <li><span class="check">✗</span>Engineering reports, formal surveys, or permit applications</li>
+          <li><span class="check">✗</span>Situations where the owner isn't ready to provide specific property details</li>
+          <li><span class="check">✗</span>Properties where frontage hasn't been evaluated yet — <a href="/frontage-and-lot-width" style="color:var(--gold);text-underline-offset:2px;text-decoration:underline;">start there first</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <button class="btn-primary gold" data-open-review="true">Find Out If Utilities &amp; Access Support Your Property &rarr;</button>
+      <p style="font-size:13px; color:var(--ink-faint); margin-top:14px;">Takes 2–3 minutes. No commitment. This is the step to take before surveys, attorneys, or anything else downstream.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS SECTION ──────────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Three steps to a clear answer.</h2>
+    <p class="section-sub">A focused intake built around your specific property. Every review requires a real address and a real question — no generic answers, no vague encouragement.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Submit Your Property Details</h4>
+        <p>Provide your address, basic lot information, and what you're trying to understand about utilities and access. The more specific the details, the more accurate the review.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>We Evaluate the Property</h4>
+        <p>We review utility infrastructure, access conditions, easement records, and the specific parcel layout to determine what's actually possible — and what isn't — for your specific property.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>You Get a Direct, Honest Answer</h4>
+        <p>We tell you whether utilities and access support what you're considering — or what's closing the path. If the constraints are real and significant, you'll know before committing to anything further. No runaround. No vague encouragement. No reason to keep spending.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST SECTION ────────────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">How We Work</p>
+    <h2 class="section-title">Property-specific. Honest. Suburban Illinois focused.</h2>
+    <div class="trust-pillars">
+      <div class="trust-pillar">
+        <h4>Deal-Killers Should Be Found Early</h4>
+        <p>Utilities and access constraints don't show up on aerial maps or basic property records. They surface when someone actually evaluates the specific parcel. Identifying them before surveys, attorneys, or permit applications is what prevents an expensive lesson.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>Honest Answers Only</h4>
+        <p>If utilities aren't viable or legal access doesn't exist, we'll say so. We're not here to string anyone along on a path that won't hold up. If the constraints are hard stops, that's what the review says.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>Property-Specific Evaluation</h4>
+        <p>Every utility and access situation is different. What cleared for a neighbor may not clear for your parcel. We evaluate your actual property — not a hypothetical based on what's nearby.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>Suburban Illinois Focus</h4>
+        <p>We work specifically in suburban Illinois communities. The utility infrastructure, easement patterns, septic regulations, and municipal rules here are what we know — not a general framework applied from outside.</p>
+      </div>
+    </div>
+    <div class="trust-statement">
+      <blockquote>"Frontage tells you whether the lot geometry works. Utilities and access tell you whether the lot can actually function. Both questions have to be answered — and this one usually comes second."</blockquote>
+      <cite>Property Value Unlock — Suburban Illinois</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RELATED SITUATIONS ──────────────────────────── -->
+<section class="related-situations">
+  <div class="section-inner">
+    <p class="section-label">Related situations</p>
+    <div class="related-grid">
+      <a href="/frontage-and-lot-width" class="related-card">
+        <div class="related-card-title">Frontage &amp; Lot Width</div>
+        <div class="related-card-desc">The first major constraint — if you haven't confirmed frontage yet, that's where to start.</div>
+      </a>
+      <a href="/subdivide-my-property-illinois" class="related-card">
+        <div class="related-card-title">Subdivide My Property Illinois</div>
+        <div class="related-card-desc">Understand what the Illinois subdivision process actually requires beyond utilities and access.</div>
+      </a>
+      <a href="/split-vs-sell-full-property" class="related-card">
+        <div class="related-card-title">Split vs. Sell Full Property</div>
+        <div class="related-card-desc">When utility or access constraints are hard stops, a full sale may be the more direct path.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ──────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="section-inner">
+    <p class="section-label">This Is What Determines Whether Anything Else Is Worth Pursuing</p>
+    <h2>Find out whether utilities and access support your property — before you commit time or money to a path that may not be possible.</h2>
+    <p>A property-specific evaluation. If utilities or access fail on your lot, you'll know before paying for surveys, attorneys, or municipal applications — not after. Owners who skip this step and move forward often spend several thousand dollars before encountering a constraint that was always there. If they clear, you'll have confirmed the second gate and everything downstream rests on a real foundation.</p>
+    <div class="final-cta-buttons">
+      <button class="btn-primary gold" data-open-review="true">Find Out If Utilities &amp; Access Support Your Property</button>
+      <a href="tel:2244079500" class="btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.3);">Call 224-407-9500</a>
+    </div>
+    <p class="cta-phone-line">Prefer to talk first? <a href="tel:2244079500">Call or text 224-407-9500</a> — we'll tell you directly whether we can help.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────── -->
+<footer class="pvu-footer">
+  <div class="pvu-footer-inner">
+    <div>
+      <p class="pvu-footer-brand">Property Value Unlock</p>
+      <p class="pvu-footer-tagline">Suburban Illinois property analysis and land value review. Helping homeowners understand what their property may actually support.</p>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/can-i-split-my-property">Can I Split My Property</a></li>
+        <li><a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a></li>
+        <li><a href="/how-much-is-my-land-worth">Land Value</a></li>
+        <li><a href="/my-house-is-on-two-lots">Two Lots</a></li>
+        <li><a href="/split-vs-sell-full-property">Split vs Sell</a></li>
+      </ul>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:2244079500" class="pvu-footer-phone">224-407-9500</a></li>
+        <li><a href="javascript:void(0)" data-open-review="true">Get a Real Answer on Your Property</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="pvu-footer-divider">
+  <div class="pvu-footer-bottom">
+    <span>&copy; 2025 Property Value Unlock. All rights reserved.</span>
+    <span class="pvu-footer-legal">This site does not provide legal, zoning, engineering, or survey advice. Reviews are based on specific property information provided by homeowners.</span>
+  </div>
+</footer>
+
+<!-- ─── MODAL ──────────────────────────────────────────── -->
+<div class="review-modal-backdrop" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="review-modal" id="reviewModalPanel">
+    <div class="review-modal-header">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <p class="modal-eyebrow">Property Value Unlock</p>
+      <h2 id="modalTitle">Get a Real Answer on Your Property</h2>
+      <p>This starts with your address. Takes 2–3 minutes. You'll get clear, property-specific direction on utilities and access — not a generic answer.</p>
+      <p style="font-size:12px;color:var(--ink-faint);margin-top:10px;">Prefer to talk first? Call or text <a href="tel:2244079500" style="color:var(--gold);">224-407-9500</a>.</p>
+    </div>
+    <div class="review-modal-body">
+      <iframe src="https://api.leadconnectorhq.com/widget/survey/vL5ol0Pulhz4tGoSjA46" style="border:none;width:100%;" scrolling="no" id="vL5ol0Pulhz4tGoSjA46" title="survey"></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var backdrop = document.getElementById('reviewModal');
+  var closeBtn = document.getElementById('modalClose');
+  var mobileBtn = document.getElementById('mobileMenuBtn');
+  var mobilePanel = document.getElementById('mobileNavPanel');
+
+  function openModal() {
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (mobilePanel) mobilePanel.classList.remove('is-open');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeModal() {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-review="true"]').forEach(function(el){
+    el.addEventListener('click', openModal);
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', function(e){ if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && backdrop.classList.contains('is-open')) closeModal(); });
+
+  if (mobileBtn && mobilePanel) {
+    mobileBtn.addEventListener('click', function(){
+      mobilePanel.classList.toggle('is-open');
+    });
+  }
+})();
+</script>
+</body>
+</html>

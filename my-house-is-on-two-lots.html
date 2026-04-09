@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My House Is on Two Lots. Can I Sell One? | Property Value Unlock</title>
+<meta name="description" content="Many suburban Illinois homeowners assume two lots means one can be sold. It's not that simple. Property Value Unlock reviews your specific property to determine whether the second lot is actually viable, sellable, or worth pursuing.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #141414;
+    --ink-soft: #3a3a3a;
+    --ink-muted: #6b6b6b;
+    --rule: #e2e0da;
+    --bg: #f8f7f4;
+    --bg-warm: #f2f0eb;
+    --bg-card: #ffffff;
+    --gold: #b8975a;
+    --gold-light: #d4b47a;
+    --gold-bg: #f9f5ee;
+    --accent-green: #2d5a3d;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  /* ── UTILITIES ─────────────────────────────── */
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container--narrow {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section--warm {
+    background: var(--bg-warm);
+  }
+
+  .section--gold-bg {
+    background: var(--gold-bg);
+  }
+
+  .section--white {
+    background: var(--bg-card);
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px 0;
+  }
+
+  .divider--center { margin: 20px auto; }
+
+  .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── BUTTONS ─────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn--primary {
+    background: var(--ink);
+    color: #fff;
+    padding: 14px 28px;
+  }
+
+  .btn--primary:hover {
+    background: var(--ink-soft);
+  }
+
+  .btn--gold {
+    background: var(--gold);
+    color: #fff;
+    padding: 14px 28px;
+  }
+
+  .btn--gold:hover {
+    background: var(--gold-light);
+  }
+
+  .btn--ghost {
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 13px 24px;
+    border: 1px solid var(--rule);
+  }
+
+  .btn--ghost:hover {
+    border-color: var(--ink-soft);
+    color: var(--ink);
+  }
+
+  .btn--phone {
+    background: transparent;
+    color: var(--ink-soft);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0;
+    gap: 6px;
+  }
+
+  .btn--phone:hover { color: var(--gold); }
+
+  
+
+  /* ── HERO ─────────────────────────────── */
+  .hero {
+    padding: 88px 0 80px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-content .label { margin-bottom: 16px; }
+
+  .hero-headline {
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+
+  .hero-bullets {
+    list-style: none;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .hero-bullets li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-visual {
+    background: var(--bg-warm);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .hero-visual-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+  }
+
+  .lot-diagram {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin-bottom: 20px;
+  }
+
+  .lot-box {
+    border: 1.5px solid var(--rule);
+    border-radius: 3px;
+    padding: 20px 16px;
+    background: var(--bg-card);
+    position: relative;
+  }
+
+  .lot-box--house {
+    border-color: var(--ink);
+  }
+
+  .lot-box-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+
+  .lot-box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .lot-box-note {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .lot-box-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+
+  .badge--question {
+    background: #fff3cd;
+    color: #7a5a00;
+  }
+
+  .badge--concern {
+    background: #fde8e8;
+    color: #8b2020;
+  }
+
+  .hero-visual-note {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-style: italic;
+  }
+
+  @media (max-width: 860px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hero-visual { display: none; }
+  }
+
+  /* ── ASSUMPTION VS REALITY ─────────────────────────────── */
+  .avr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .avr-panel {
+    padding: 40px;
+    background: var(--bg-card);
+  }
+
+  .avr-panel--reality {
+    background: var(--bg-warm);
+  }
+
+  .avr-panel-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .tag--assumption { color: var(--ink-muted); }
+  .tag--reality { color: var(--gold); }
+
+  .avr-panel h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .avr-panel p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .avr-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .avr-list li {
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .avr-list li .icon {
+    flex-shrink: 0;
+    font-size: 14px;
+    margin-top: 1px;
+  }
+
+  @media (max-width: 700px) {
+    .avr-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCENARIO CARDS ─────────────────────────────── */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px;
+    transition: border-color 0.2s;
+  }
+
+  .scenario-card:hover {
+    border-color: var(--gold);
+  }
+
+  .scenario-card-icon {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .scenario-card h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .scenario-card p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ── FACTORS ─────────────────────────────── */
+  .factors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .factor-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .factor-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 32px;
+  }
+
+  .factor-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .factor-content p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ── SHARP SECTION ─────────────────────────────── */
+  .sharp-box {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 4px;
+    padding: 56px 64px;
+    margin-top: 40px;
+  }
+
+  .sharp-box .label { color: var(--gold); margin-bottom: 16px; }
+
+  .sharp-box h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .sharp-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 32px;
+  }
+
+  .sharp-col h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .sharp-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sharp-col ul li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .sharp-col ul li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .sharp-divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 32px 0;
+  }
+
+  .sharp-box p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  @media (max-width: 700px) {
+    .sharp-box { padding: 36px 28px; }
+    .sharp-cols { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* ── REVIEW OFFER ─────────────────────────────── */
+  .review-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .review-left h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.015em;
+  }
+
+  .review-left p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .qualification-note {
+    background: var(--gold-bg);
+    border: 1px solid rgba(184,151,90,0.3);
+    border-radius: 3px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-top: 24px;
+  }
+
+  .qualification-note strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .for-notfor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  .for-block {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 24px;
+  }
+
+  .for-block-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .for-label--yes { color: var(--accent-green); }
+  .for-label--no { color: #8b2020; }
+
+  .for-block ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .for-block ul li {
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .check { color: var(--accent-green); flex-shrink: 0; }
+  .ex { color: #8b2020; flex-shrink: 0; }
+
+  @media (max-width: 800px) {
+    .review-inner { grid-template-columns: 1fr; gap: 36px; }
+  }
+
+  /* ── PROCESS ─────────────────────────────── */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .process-step {
+    padding: 36px 28px;
+    background: var(--bg-card);
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .process-step:last-child { border-right: none; }
+
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--rule);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .process-step h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .process-step p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 680px) {
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+    .process-step {
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    .process-step:last-child { border-bottom: none; }
+  }
+
+  /* ── FINAL CTA ─────────────────────────────── */
+  .final-cta {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--rule);
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .final-cta p {
+    font-size: 16px;
+    color: var(--ink-muted);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .final-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+  /* ─── FOOTER ──────────────────────────────────────────── */
+  .pvu-footer {
+    background: #0e0e0e;
+    padding: 52px clamp(20px, 5vw, 64px) 32px;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+  }
+  .pvu-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .pvu-footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+  }
+  .pvu-footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    max-width: 260px;
+  }
+  .pvu-footer-col h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .pvu-footer-col ul { list-style: none; }
+  .pvu-footer-col ul li { margin-bottom: 9px; }
+  .pvu-footer-col ul li a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+  }
+  .pvu-footer-col ul li a:hover { color: rgba(255,255,255,0.8); }
+  .pvu-footer-phone {
+    color: rgba(255,255,255,0.7) !important;
+    font-weight: 500;
+  }
+  .pvu-footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin: 36px auto 20px;
+    max-width: 1200px;
+  }
+  .pvu-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.22);
+    line-height: 1.65;
+  }
+  .pvu-footer-legal {
+    max-width: 640px;
+  }
+  @media (max-width: 860px) {
+    .pvu-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .pvu-footer-bottom { flex-direction: column; gap: 10px; }
+  }
+  }
+
+
+  /* ── SECTION HEADINGS ─────────────────────────────── */
+  .section-head {
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--ink-muted);
+    max-width: 580px;
+    line-height: 1.7;
+  }
+
+  /* ─── MODAL ───────────────────────────────────────────── */
+  .review-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(14,14,14,0.72);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .review-modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .review-modal {
+    background: var(--bg);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+    transform: translateY(16px) scale(0.985);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+  .review-modal-backdrop.is-open .review-modal {
+    transform: translateY(0) scale(1);
+  }
+  .review-modal-header {
+    padding: 32px 36px 24px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .review-modal-header .modal-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .review-modal-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .review-modal-header p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 460px;
+  }
+  .modal-close {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--bg-card);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 18px;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+  .modal-close:hover {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+  .review-modal-body {
+    padding: 28px 36px 36px;
+  }
+  .review-modal-body iframe {
+    display: block;
+    width: 100%;
+    min-height: 520px;
+    border: none;
+  }
+  @media (max-width: 640px) {
+    .review-modal-header { padding: 24px 20px 20px; }
+    .review-modal-body { padding: 20px 20px 28px; }
+    .modal-close { top: 16px; right: 16px; }
+  }
+
+  /* ─── BTN-PRIMARY ──────────────────────────────────────── */
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 11px 22px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    background: var(--accent-green);
+    transform: translateY(-1px);
+  }
+    /* ─── HEADER ─────────────────────────────────────────── */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248,247,244,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 clamp(20px, 5vw, 64px);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-phone {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .header-phone:hover { color: var(--gold); }
+
+/* ─── TOP NAV ──────────────────────────────────────────── */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .site-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    padding: 6px 10px;
+    border-radius: 3px;
+    transition: color 0.18s, background 0.18s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover { color: var(--ink); background: var(--bg-warm); }
+  .site-nav a.nav-active {
+    color: var(--ink);
+    background: var(--bg-warm);
+    font-weight: 600;
+  }
+  .site-nav .nav-cta {
+    background: var(--gold);
+    color: #fff !important;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    transition: background 0.18s;
+  }
+  .site-nav .nav-cta:hover { background: #9a7d48; }
+
+  /* mobile nav */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--ink-muted);
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: all 0.2s;
+  }
+  .mobile-nav-panel {
+    display: none;
+    position: fixed;
+    inset: 68px 0 auto 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 24px 20px;
+    z-index: 99;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .mobile-nav-panel.is-open { display: block; }
+  .mobile-nav-panel a,
+  .mobile-nav-panel button {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-align: left;
+    width: 100%;
+    transition: color 0.18s;
+  }
+  .mobile-nav-panel a:last-child,
+  .mobile-nav-panel button:last-child { border-bottom: none; }
+  .mobile-nav-panel a:hover,
+  .mobile-nav-panel button:hover { color: var(--gold); }
+  .mobile-nav-panel a.nav-active { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .site-nav { display: none; }
+    .mobile-menu-btn { display: flex; }
+  }
+
+  /* ─── RELATED SITUATIONS ───────────────────────────────── */
+  .related-situations {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--rule);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .related-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .related-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(184,151,90,0.35);
+    transform: translateY(-2px);
+  }
+  .related-card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .related-card-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+  /* ─── FOOTER ──────────────────────────────────────────── */
+  .pvu-footer {
+    background: #0e0e0e;
+    padding: 52px clamp(20px, 5vw, 64px) 32px;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+  }
+  .pvu-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .pvu-footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+  }
+  .pvu-footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    max-width: 260px;
+  }
+  .pvu-footer-col h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .pvu-footer-col ul { list-style: none; }
+  .pvu-footer-col ul li { margin-bottom: 9px; }
+  .pvu-footer-col ul li a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+  }
+  .pvu-footer-col ul li a:hover { color: rgba(255,255,255,0.8); }
+  .pvu-footer-phone {
+    color: rgba(255,255,255,0.7) !important;
+    font-weight: 500;
+  }
+  .pvu-footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin: 36px auto 20px;
+    max-width: 1200px;
+  }
+  .pvu-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.22);
+    line-height: 1.65;
+  }
+  .pvu-footer-legal {
+    max-width: 640px;
+  }
+  @media (max-width: 860px) {
+    .pvu-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .pvu-footer-bottom { flex-direction: column; gap: 10px; }
+  }
+  }
+
+
+</style>
+<link rel="canonical" href="https://propertyvalueunlock.com/my-house-is-on-two-lots">
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-name">Property Value Unlock</span>
+      <span class="logo-sub">Suburban Illinois Land Review</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/can-i-split-my-property">Can I Split My Property</a>
+      <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+      <a href="/how-much-is-my-land-worth">Land Value</a>
+      <a href="/my-house-is-on-two-lots" class="nav-active">Two Lots</a>
+      <button class="nav-cta" data-open-review="true">Get Clarity</button>
+    </nav>
+    <div class="header-right">
+      <a href="tel:2244079500" class="header-phone">224-407-9500</a>
+      <button class="btn-primary" data-open-review="true">Get a Real Answer on Your Property</button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="/can-i-split-my-property">Can I Split My Property</a>
+  <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+  <a href="/how-much-is-my-land-worth">Land Value</a>
+  <a href="/my-house-is-on-two-lots" class="nav-active">Two Lots</a>
+  <button data-open-review="true">Get Clarity</button>
+</div>
+
+<!-- ── HERO ─────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="label">Two-Lot Properties — Suburban Illinois</p>
+        <div class="divider"></div>
+        <h1 class="hero-headline">
+          Two lots on paper is a starting point — not an answer.<br>
+          <em>Find out whether yours can actually be sold.</em>
+        </h1>
+        <p class="hero-sub">
+          Two parcels on a tax bill, two PINs, or a visible lot line on a survey doesn't mean two sellable pieces of land. Whether one lot can actually be sold depends on your specific property — the layout, frontage, utility situation, and where your existing structure sits relative to any proposed separation. <strong>In most cases we review, the second lot cannot be sold without adjustments. In some, it cannot be sold at all. Finding that out before pursuing it saves time and prevents costly detours.</strong>
+        </p>
+        <ul class="hero-bullets">
+          <li>Two lots on paper is not the same as two sellable lots — and the gap between those two things is exactly where owners get stuck</li>
+          <li><a href="/frontage-and-lot-width" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Frontage, lot width, and municipal requirements</a> — not just paperwork — determine what is actually possible</li>
+          <li>Property Value Unlock reviews what your specific property can realistically support</li>
+        </ul>
+        <div class="hero-ctas">
+          <button class="btn btn--primary open-modal" data-open-review="true">Find Out If Your Second Lot Can Be Sold</button>
+          <a href="tel:2244079500" class="btn btn--phone">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.73 12 19.79 19.79 0 0 1 1.7 3.4 2 2 0 0 1 3.66 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            224-407-9500
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <p class="hero-visual-label">Common homeowner scenario</p>
+        <div class="lot-diagram">
+          <div class="lot-box lot-box--house">
+            <div class="lot-box-label">Lot A</div>
+            <div class="lot-box-title">Your House</div>
+            <div class="lot-box-note">Existing structure, driveway, utilities</div>
+          </div>
+          <div class="lot-box">
+            <div class="lot-box-label">Lot B</div>
+            <div class="lot-box-title">Second Parcel</div>
+            <div class="lot-box-note">Appears separate on tax records</div>
+            <div class="lot-box-badge badge--question">Can this be sold?</div>
+          </div>
+        </div>
+        <div style="background:var(--bg); border:1px solid var(--rule); border-radius:3px; padding:16px; margin-bottom:16px;">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px;">What actually determines the answer</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-size:13px;color:var(--ink-soft);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">→</span> Does Lot B have its own frontage?</div>
+            <div style="font-size:13px;color:var(--ink-soft);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">→</span> Does your garage or driveway cross onto Lot B?</div>
+            <div style="font-size:13px;color:var(--ink-soft);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">→</span> Does the municipality allow Lot B to stand alone?</div>
+            <div style="font-size:13px;color:var(--ink-soft);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">→</span> Does Lot A still comply after a split?</div>
+          </div>
+        </div>
+        <p class="hero-visual-note">Every one of these answers depends on your specific property — not general rules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ASSUMPTION VS REALITY ─────────────────────────────── -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-head">
+      <p class="label">The Core Issue</p>
+      <div class="divider"></div>
+      <h2 class="section-title">The assumption that two recorded lots means two sellable lots — and why it almost never holds up without a review</h2>
+      <p class="section-sub">This gap is where owners spend real money and time — on paths that weren't available to them — before finding out the constraints existed all along.</p>
+    </div>
+    <div class="avr-grid">
+      <div class="avr-panel">
+        <div class="avr-panel-tag tag--assumption">Common Assumption</div>
+        <h3>Two lots on my tax records — selling one should be straightforward.</h3>
+        <p>The paperwork feels like proof. Two PINs, a recorded plat, a visible line on a survey — it looks like the work is already done. But those documents describe what exists in the records, not what's viable in reality.</p>
+        <p>The conclusion feels obvious: two lots should mean two marketable pieces of land. That's where most owners start — and where many stay until the real constraints are revealed.</p>
+        <ul class="avr-list">
+          <li><span class="icon">—</span> Two PINs on a tax bill describe an administrative record — not a confirmation that both can be sold independently</li>
+          <li><span class="icon">—</span> A platted lot line seems like a natural dividing point</li>
+          <li><span class="icon">—</span> Neighbor or builder interest feels like confirmation</li>
+          <li><span class="icon">—</span> A survey showing two lots seems definitive</li>
+        </ul>
+      </div>
+      <div class="avr-panel avr-panel--reality">
+        <div class="avr-panel-tag tag--reality">The Reality</div>
+        <h3>Whether it can be sold depends on factors that don't appear in any of those records.</h3>
+        <p>Paper records document what exists. They don't tell you whether what exists can actually be separated and sold under current conditions. Those are different questions — and the second one is the only one that matters here.</p>
+        <p>The real question is whether the second lot can function on its own — and whether what remains still works after the split.</p>
+        <ul class="avr-list">
+          <li><span class="icon">→</span> Where your house, garage, or driveway sits relative to the lot line</li>
+          <li><span class="icon">→</span> Whether the second lot has its own usable frontage</li>
+          <li><span class="icon">→</span> What the municipality requires for a lot to be sold independently</li>
+          <li><span class="icon">→</span> Whether the remaining lot still meets minimum area and setback rules</li>
+          <li><span class="icon">→</span> Whether utilities exist or need to be extended</li>
+        </ul>
+        <p><strong>This pattern appears consistently across the properties we review — lots that look clean on paper and prove constrained in practice. The owners who find that out early avoid a costly process that produces the same answer later.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SCENARIO SECTION ─────────────────────────────── -->
+<section class="section section--warm">
+  <div class="container">
+    <div class="section-head">
+      <p class="label">Does This Sound Familiar?</p>
+      <div class="divider"></div>
+      <h2 class="section-title">Does one of these describe where you are right now?</h2>
+      <p class="section-sub">If any of these match, the question of whether your second lot is actually sellable needs a real answer — before you go further on the assumption that it is.</p>
+    </div>
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="scenario-card-icon">📄</div>
+        <h3>Your tax bill shows two parcels or two PINs</h3>
+        <p>Your tax bill shows two PINs or two separate assessments, and you've been assuming that means one can be separated and sold independently. You want to find out whether that assumption holds up.</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-card-icon">📐</div>
+        <h3>Your property appears to have two platted lots</h3>
+        <p>An old plat map, a survey, or a title document shows your land originally consisted of two distinct lots that were at some point combined under one ownership.</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-card-icon">🏗️</div>
+        <h3>A builder or neighbor approached you about part of your land</h3>
+        <p>Someone has approached you about purchasing part of your land. Before you engage further or respond to any offer, you want to understand whether the path they're describing is actually viable — and what your property can realistically support.</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-card-icon">🏡</div>
+        <h3>You have a visible side lot or open parcel next to your house</h3>
+        <p>Your property has what appears to be unused or open land beside or behind the house, and you believe it may be separable from the main parcel.</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-card-icon">💡</div>
+        <h3>You want to unlock value without selling the whole property</h3>
+        <p>You are not interested in selling your home, but you want to know whether part of the land could be sold independently to generate proceeds.</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-card-icon">🔍</div>
+        <h3>You looked into it and got conflicting or vague answers</h3>
+        <p>You've already asked neighbors, a real estate agent, maybe the county. You've gotten conflicting information or general answers that don't tell you what you actually need to know: whether your specific property qualifies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FACTORS ─────────────────────────────── -->
+<section class="section section--white">
+  <div class="container">
+    <div class="section-head">
+      <p class="label">What Actually Matters</p>
+      <div class="divider"></div>
+      <h2 class="section-title">What actually determines whether the second lot is sellable — and why these questions don't appear in any records</h2>
+      <p class="section-sub">These are the factors reviewed on every two-lot property. None of them appear on a tax bill, a plat, or a survey. Each one operates independently — meaning any one of them can close the path even when everything else looks clear.</p>
+    </div>
+    <div class="factors-grid">
+      <div class="factor-card">
+        <div class="factor-number">01</div>
+        <div class="factor-content">
+          <h3>Where the existing structure sits</h3>
+          <p>If your house, garage, shed, or driveway encroaches onto the second lot, that complicates or prevents a clean separation — regardless of what the lot line shows.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-number">02</div>
+        <div class="factor-content">
+          <h3>Lot width and frontage</h3>
+          <p>Most municipalities require a minimum street frontage for a lot to be considered buildable and separately transferable. If the second lot lacks adequate frontage, it may not qualify.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-number">03</div>
+        <div class="factor-content">
+          <h3>Minimum lot area requirements</h3>
+          <p>Zoning codes specify the smallest lot size permitted in a given district. A second parcel that falls below that threshold is generally not separately sellable as a buildable lot.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-number">04</div>
+        <div class="factor-content">
+          <h3>Whether the remaining lot still complies</h3>
+          <p>After a split, the lot your house sits on must still meet setback, coverage, and minimum size requirements. If separating one lot creates a nonconforming situation, the municipality may block it.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-number">05</div>
+        <div class="factor-content">
+          <h3>Utilities and access</h3>
+          <p>Does the second lot have independent utility service, or does everything run through the main parcel? A lot without its own water, sewer, and access is significantly harder to sell at market value.</p>
+        </div>
+      </div>
+      <div class="factor-card">
+        <div class="factor-number">06</div>
+        <div class="factor-content">
+          <h3>Municipality-specific rules</h3>
+          <p>Lot split rules vary meaningfully from one suburb to the next. What is permissible in one municipality may require a variance or be outright prohibited in another.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHARP SECTION ─────────────────────────────── -->
+<section class="section section--warm">
+  <div class="container">
+    <div class="sharp-box">
+      <p class="label">The Right Question</p>
+      <div class="divider"></div>
+      <h2>The record says two lots. Whether both can be sold is a different question — and the only one that matters here.</h2>
+      <p>What appears in records and what can actually be separated and sold in practice are different things. That distinction is not a technicality — it is the core issue in almost every two-lot property situation we review, and it's why the question requires a property-specific answer rather than a general one.</p>
+      <div class="sharp-divider"></div>
+      <div class="sharp-cols">
+        <div class="sharp-col">
+          <h4>The question most homeowners ask</h4>
+          <ul>
+            <li>Do I have two lots?</li>
+            <li>Does my tax bill show two parcels?</li>
+            <li>Is there a lot line on the survey?</li>
+            <li>Did someone offer to buy part of my land?</li>
+          </ul>
+        </div>
+        <div class="sharp-col">
+          <h4>The question that actually matters</h4>
+          <ul>
+            <li>Can the second lot stand on its own?</li>
+            <li>Does it meet frontage and area requirements?</li>
+            <li>Does anything from the main parcel cross onto it?</li>
+            <li>What does this specific municipality allow?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sharp-divider"></div>
+      <p>There is only one path to a real answer: evaluate the actual property — its layout, its constraints, and the specific rules that govern it. That's what this review does. When the second lot is genuinely viable, the financial upside can be significant. When it isn't, knowing that before spending money pursuing it is equally valuable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEW OFFER ─────────────────────────────── -->
+<section class="section section--white">
+  <div class="container">
+    <div class="review-inner">
+      <div class="review-left">
+        <p class="label">The Review</p>
+        <div class="divider"></div>
+        <h2>Two-Lot Property — Property-Specific Review</h2>
+        <p>This review is built for homeowners who believe they have two lots and want a straight answer on whether one can actually be sold — before committing to a path based on that assumption. When the second lot is genuinely viable, it represents real financial upside. When it isn't, that's worth knowing before anything else moves forward.</p>
+        <p>The review evaluates your actual property — not a theoretical version of it. What a builder said without seeing your lot, or what a neighbor assumed from similar parcels, is not a substitute for a property-specific answer.</p>
+        <p>Possible outcomes of the review include:</p>
+        <ul class="avr-list" style="margin-bottom:20px;">
+          <li><span style="color:var(--gold);">→</span> The second lot is viable and the path forward is clear</li>
+          <li><span style="color:var(--gold);">→</span> The property may need restructuring before a sale is possible</li>
+          <li><span style="color:var(--gold);">→</span> The lot cannot be sold under current conditions — and knowing that early prevents an expensive detour</li>
+          <li><span style="color:var(--gold);">→</span> A different path — including a full property sale — may make more sense</li>
+          <li><span style="color:var(--gold);">→</span> In some situations, we may be able to help facilitate or directly purchase depending on the property and structure</li>
+        </ul>
+        <div class="qualification-note">
+          <strong>Every review is based on a specific property and address.</strong> General answers on two-lot questions are almost always incomplete or misleading. The only answer worth having is the one that comes from evaluating your actual lot.
+        </div>
+      </div>
+      <div class="review-right">
+        <div class="for-notfor">
+          <div class="for-block">
+            <div class="for-block-label for-label--yes">This review is for you if</div>
+            <ul>
+              <li><span class="check">✓</span> You own a property in suburban Illinois that appears to be on two lots</li>
+              <li><span class="check">✓</span> You want to know whether the second lot is actually sellable or usable</li>
+              <li><span class="check">✓</span> You want a straight answer based on your real property — not a general explanation</li>
+              <li><span class="check">✓</span> You are willing to share an address so the review can be meaningful</li>
+              <li><span class="check">✓</span> You want to understand your options before spending money on attorneys or permits</li>
+            </ul>
+          </div>
+          <div class="for-block">
+            <div class="for-block-label for-label--no">This review is not for you if</div>
+            <ul>
+              <li><span class="ex">✕</span> You are looking for general legal or zoning education</li>
+              <li><span class="ex">✕</span> You want a real estate agent to list the property as-is</li>
+              <li><span class="ex">✕</span> You are not willing to share the property address</li>
+              <li><span class="ex">✕</span> You are looking for a guaranteed outcome before doing any analysis</li>
+            </ul>
+          </div>
+          <button class="btn btn--primary open-modal" data-open-review="true" style="width:100%;justify-content:center;padding:16px;">Find Out If Your Second Lot Can Be Sold</button>
+          <div style="text-align:center;">
+            <a href="tel:2244079500" class="btn btn--phone" style="justify-content:center;">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.73 12 19.79 19.79 0 0 1 1.7 3.4 2 2 0 0 1 3.66 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Or call 224-407-9500
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ─────────────────────────────── -->
+<section class="section section--warm">
+  <div class="container">
+    <div class="section-head" style="text-align:center;">
+      <p class="label" style="text-align:center;">How It Works</p>
+      <div class="divider divider--center"></div>
+      <h2 class="section-title" style="text-align:center;">Three steps to a real answer on your property.</h2>
+      <p class="section-sub" style="margin:0 auto;">The review is built to be direct. You share your property address, we evaluate the actual constraints, and you get a clear, property-specific answer — not a general one.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Submit the property</h3>
+        <p>Share your property address through the intake form. This is the only way the review can be specific and meaningful.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>We review the actual constraints</h3>
+        <p>We examine the layout, lot dimensions, structure placement, municipal requirements, and any factors that affect whether the second lot is viable on its own.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>You get clear next-step direction</h3>
+        <p>We tell you directly what your property can realistically support — whether the second lot is genuinely viable, whether restructuring is required first, or whether it's not worth pursuing under current conditions. You'll know exactly where you stand — without vague guidance or general encouragement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ─────────────────────────────── -->
+<!-- ─── RELATED SITUATIONS ──────────────────────────────── -->
+<section class="related-situations" style="padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 64px);">
+  <div class="section-inner">
+    <p class="section-label">Related situations</p>
+    <div class="related-grid">
+    <a href="/can-i-sell-part-of-my-yard" class="related-card">
+      <div class="related-card-title">Can I Sell Part of My Yard</div>
+      <div class="related-card-desc">Selling one lot works similarly to selling part of a yard — with its own constraints.</div>
+    </a>
+    <a href="/split-vs-sell-full-property" class="related-card">
+      <div class="related-card-title">Split vs Sell Full Property</div>
+      <div class="related-card-desc">Two lots doesn't always mean selling one is the right move.</div>
+    </a>
+    <a href="/subdivide-my-property-illinois" class="related-card">
+      <div class="related-card-title">Subdivide My Property Illinois</div>
+      <div class="related-card-desc">Understanding the formal subdivision process for Illinois properties.</div>
+    </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <p class="label" style="text-align:center;">Ready to Find Out?</p>
+    <div class="divider divider--center"></div>
+    <h2>Find out whether your second lot can actually be sold — before you commit any time or money to the assumption that it can.</h2>
+    <p>The only way to know whether the second lot is genuinely viable is to evaluate the real constraints of your specific property. That's what this review does. Most owners learn something they didn't know — whether the answer confirms what they hoped or prevents an expensive path they were about to start.</p>
+    <div class="final-cta-actions">
+      <button class="btn btn--primary open-modal" data-open-review="true" style="padding:16px 36px;font-size:15px;">Find Out If Your Second Lot Can Be Sold</button>
+      <a href="tel:2244079500" class="btn btn--phone" style="font-size:15px;">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.73 12 19.79 19.79 0 0 1 1.7 3.4 2 2 0 0 1 3.66 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 224-407-9500
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────── -->
+<footer class="pvu-footer">
+  <div class="pvu-footer-inner">
+    <div>
+      <p class="pvu-footer-brand">Property Value Unlock</p>
+      <p class="pvu-footer-tagline">Suburban Illinois property analysis and land value review. Helping homeowners understand what their property may actually support.</p>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/can-i-split-my-property">Can I Split My Property</a></li>
+        <li><a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a></li>
+        <li><a href="/how-much-is-my-land-worth">Land Value</a></li>
+        <li><a href="/my-house-is-on-two-lots">Two Lots</a></li>
+        <li><a href="/split-vs-sell-full-property">Split vs Sell</a></li>
+      </ul>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:2244079500" class="pvu-footer-phone">224-407-9500</a></li>
+        <li><a href="javascript:void(0)" data-open-review="true">Get a Real Answer on Your Property</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="pvu-footer-divider">
+  <div class="pvu-footer-bottom">
+    <span>&copy; 2025 Property Value Unlock. All rights reserved.</span>
+    <span class="pvu-footer-legal">This site does not provide legal, zoning, engineering, or survey advice. Reviews are based on specific property information provided by homeowners.</span>
+  </div>
+</footer>
+
+<!-- ── MODAL ─────────────────────────────── -->
+<!-- ─── MODAL ───────────────────────────────────────────── -->
+<div class="review-modal-backdrop" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="review-modal" id="reviewModalPanel">
+    <div class="review-modal-header">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <p class="modal-eyebrow">Property Value Unlock</p>
+      <h2 id="modalTitle">Get a Real Answer on Your Property</h2>
+      <p>This starts with your address. Takes 2–3 minutes. You'll get clear, property-specific direction — not a generic answer.</p>
+      <p style="font-size:12px;color:var(--ink-faint);margin-top:10px;">Prefer to talk first? Call or text <a href="tel:2244079500" style="color:var(--gold);">224-407-9500</a>.</p>
+    </div>
+    <div class="review-modal-body">
+      <iframe src="https://api.leadconnectorhq.com/widget/survey/vL5ol0Pulhz4tGoSjA46" style="border:none;width:100%;" scrolling="no" id="vL5ol0Pulhz4tGoSjA46" title="survey"></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var backdrop = document.getElementById('reviewModal');
+  var closeBtn = document.getElementById('modalClose');
+  var mobileBtn = document.getElementById('mobileMenuBtn');
+  var mobilePanel = document.getElementById('mobileNavPanel');
+
+  function openModal() {
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (mobilePanel) mobilePanel.classList.remove('is-open');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeModal() {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-review="true"]').forEach(function(el){
+    el.addEventListener('click', openModal);
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', function(e){ if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && backdrop.classList.contains('is-open')) closeModal(); });
+
+  if (mobileBtn && mobilePanel) {
+    mobileBtn.addEventListener('click', function(){
+      mobilePanel.classList.toggle('is-open');
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Split vs Sell Full Property | Property Value Unlock</title>
+<meta name="description" content="Suburban Illinois homeowners deciding whether to split their property, sell part of the land, or sell the full property — get a real answer based on your specific lot.">
+<link rel="canonical" href="https://propertyvalueunlock.com/split-vs-sell-full-property">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #141414;
+    --ink-soft: #3a3a3a;
+    --ink-muted: #6b6b6b;
+    --ink-faint: #999;
+    --rule: #e2e0da;
+    --bg: #f8f7f4;
+    --bg-warm: #f2f0eb;
+    --bg-card: #ffffff;
+    --gold: #b8975a;
+    --gold-light: #d4b47a;
+    --gold-bg: #f9f5ee;
+    --accent-green: #2d5a3d;
+    --radius: 4px;
+    --radius-card: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+    --shadow-hover: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── HEADER ─────────────────────────────────────────── */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248,247,244,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 clamp(20px, 5vw, 64px);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-phone {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .header-phone:hover { color: var(--gold); }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 11px 22px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-green);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary.gold {
+    background: var(--gold);
+    color: #fff;
+  }
+
+  .btn-primary.gold:hover {
+    background: #9a7d48;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 11px 22px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-outline:hover {
+    background: var(--ink);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* ─── HERO ────────────────────────────────────────────── */
+
+  .hero {
+    padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px);
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(184,151,90,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1.5px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .hero-bullets {
+    list-style: none;
+    margin-bottom: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .hero-bullets li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-ctas .btn-primary {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
+
+  .hero-phone-cta {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    transition: color 0.2s;
+  }
+
+  .hero-phone-cta:hover { color: var(--gold); }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .hero-stat-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateX(-3px);
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gold-bg);
+    border: 1px solid rgba(184,151,90,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+
+  .stat-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .stat-text span {
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .hero-badge {
+    margin-top: 6px;
+    background: var(--accent-green);
+    color: #fff;
+    border-radius: var(--radius-card);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-badge-icon { font-size: 22px; }
+
+  .hero-badge-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .hero-badge-text span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ─── SECTION LAYOUT ──────────────────────────────────── */
+
+  section {
+    padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px);
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  /* ─── CLARITY SECTION ─────────────────────────────────── */
+
+  .clarity {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .clarity .section-label { color: var(--gold-light); }
+
+  .clarity .section-title { color: #fff; }
+
+  .clarity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  .clarity-copy p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+
+  .clarity-copy p:last-child { margin-bottom: 0; }
+
+  .clarity-copy strong { color: #fff; font-weight: 500; }
+
+  .clarity-points {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .clarity-point {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .clarity-point-q {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .clarity-point-a {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ─── HARD TRUTH SECTION ─────────────────────────────── */
+
+  .hard-truth { background: var(--ink); color: #fff; }
+  .hard-truth .section-label { color: var(--gold-light); }
+  .hard-truth .section-title { color: #fff; }
+
+  /* ─── SCENARIO SECTION ────────────────────────────────── */
+
+  .scenarios { background: var(--bg-warm); }
+
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 28px 26px;
+    cursor: default;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .scenario-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(184,151,90,0.3);
+    transform: translateY(-2px);
+  }
+
+  .scenario-icon {
+    font-size: 22px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .scenario-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  /* ─── COMPARISON SECTION ──────────────────────────────── */
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .comparison-col {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .comparison-col-header {
+    padding: 24px 28px;
+    background: var(--ink);
+  }
+
+  .comparison-col-header h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .comparison-col-header p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+  }
+
+  .comparison-col-body {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+
+  .comparison-item {
+    padding: 16px 28px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.5;
+  }
+
+  .comparison-item:last-child { border-bottom: none; }
+
+  .comparison-item .ci-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .comparison-item .ci-dot.red {
+    background: #c0392b;
+  }
+
+  /* ─── FACTORS (HARD TRUTH) SECTION ───────────────────── */
+
+  .factors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    margin-top: 48px;
+  }
+
+  .factor-cell {
+    background: var(--bg-card);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+
+  .factor-cell:hover { background: var(--gold-bg); }
+
+  .factor-num {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .factor-cell h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .factor-cell p {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── REFRAME SECTION ─────────────────────────────────── */
+
+  .reframe {
+    background: var(--gold-bg);
+    border-top: 1px solid rgba(184,151,90,0.15);
+    border-bottom: 1px solid rgba(184,151,90,0.15);
+    text-align: center;
+  }
+
+  .reframe-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .reframe .section-title {
+    font-size: clamp(26px, 3vw, 40px);
+    margin-bottom: 24px;
+  }
+
+  .reframe-answer {
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1.35;
+    margin-bottom: 28px;
+  }
+
+  .reframe-body {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ─── REVIEW OFFER SECTION ────────────────────────────── */
+
+  .offer { background: var(--bg-warm); }
+
+  .offer-inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  .offer-box {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .offer-box-header {
+    background: var(--ink);
+    padding: 22px 28px;
+  }
+
+  .offer-box-header h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .offer-box-header p {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 300;
+  }
+
+  .offer-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .offer-list li {
+    padding: 16px 28px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .offer-list li:last-child { border-bottom: none; }
+
+  .offer-list li .check {
+    color: var(--accent-green);
+    font-size: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .offer-list.not li .check { color: #c0392b; }
+
+  /* ─── PROCESS SECTION ─────────────────────────────────── */
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(16.67% + 20px);
+    right: calc(16.67% + 20px);
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .process-step { text-align: center; position: relative; }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--gold);
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .process-step p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── OPTIONS SECTION ─────────────────────────────────── */
+
+  .options { background: var(--bg-warm); }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .option-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 28px 20px;
+    text-align: left;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .option-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(184,151,90,0.25);
+  }
+
+  .option-card.featured {
+    border-color: rgba(184,151,90,0.3);
+    background: var(--gold-bg);
+  }
+
+  .option-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(184,151,90,0.1);
+    border-radius: 2px;
+    padding: 3px 8px;
+    margin-bottom: 16px;
+  }
+
+  .option-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .option-card p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── TRUST SECTION ───────────────────────────────────── */
+
+  .trust-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .trust-pillar {
+    border-left: 2px solid var(--gold);
+    padding: 4px 0 4px 20px;
+  }
+
+  .trust-pillar h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .trust-pillar p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .trust-statement {
+    margin-top: 64px;
+    padding: 44px 48px;
+    background: var(--gold-bg);
+    border: 1px solid rgba(184,151,90,0.2);
+    border-radius: var(--radius-card);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .trust-statement blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .trust-statement cite {
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ─── FINAL CTA SECTION ───────────────────────────────── */
+
+  .final-cta {
+    background: var(--ink);
+    text-align: center;
+    padding: clamp(80px, 10vw, 128px) clamp(20px, 5vw, 64px);
+  }
+
+  .final-cta .section-label { color: var(--gold-light); }
+
+  .final-cta h2 {
+    color: #fff;
+    font-size: clamp(30px, 4vw, 52px);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  .final-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 44px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .final-cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .final-cta .btn-primary {
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  .cta-phone-line {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 24px;
+  }
+
+  .cta-phone-line a {
+    color: var(--gold-light);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .cta-phone-line a:hover { color: #fff; }
+
+  
+
+  /* ─── ANIMATIONS ──────────────────────────────────────── */
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.34s; }
+  .delay-4 { animation-delay: 0.46s; }
+  .delay-5 { animation-delay: 0.58s; }
+
+  /* ─── RESPONSIVE ──────────────────────────────────────── */
+
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { display: none; }
+    .clarity-grid { grid-template-columns: 1fr; gap: 40px; }
+    .scenarios-grid { grid-template-columns: repeat(2, 1fr); }
+    .comparison-grid { grid-template-columns: 1fr; }
+    .factors-grid { grid-template-columns: repeat(2, 1fr); }
+    .offer-inner-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 24px; }
+    .process-steps::before { display: none; }
+    .options-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-pillars { grid-template-columns: repeat(2, 1fr); }
+    
+    
+    
+  }
+
+  @media (max-width: 640px) {    .scenarios-grid { grid-template-columns: 1fr; }
+    .factors-grid { grid-template-columns: 1fr; }
+    .options-grid { grid-template-columns: 1fr; }
+    .trust-pillars { grid-template-columns: 1fr; }
+    .trust-statement { padding: 32px 24px; }
+    .hero-ctas { flex-direction: column; align-items: flex-start; }
+    .final-cta-buttons { flex-direction: column; }
+  }
+
+  /* ─── MODAL ───────────────────────────────────────────── */
+
+  .review-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(14,14,14,0.72);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .review-modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .review-modal {
+    background: var(--bg-card);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+    transform: translateY(16px) scale(0.985);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+  }
+
+  .review-modal-backdrop.is-open .review-modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .review-modal-header {
+    padding: 32px 36px 24px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .review-modal-header .modal-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .review-modal-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .review-modal-header p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 460px;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--bg-card);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 18px;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+
+  .modal-close:hover {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+
+  .review-modal-body {
+    padding: 28px 36px 36px;
+  }
+
+  .review-modal-body iframe {
+    display: block;
+    width: 100%;
+    min-height: 520px;
+    border: none;
+  }
+
+  @media (max-width: 640px) {
+    .review-modal-header { padding: 24px 20px 20px; }
+    .review-modal-body { padding: 20px 20px 28px; }
+    .modal-close { top: 16px; right: 16px; }
+  }
+
+  /* ─── TOP NAV ──────────────────────────────────────────── */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .site-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    padding: 6px 10px;
+    border-radius: 3px;
+    transition: color 0.18s, background 0.18s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover { color: var(--ink); background: var(--bg-warm); }
+  .site-nav a.nav-active {
+    color: var(--ink);
+    background: var(--bg-warm);
+    font-weight: 600;
+  }
+  .site-nav .nav-cta {
+    background: var(--gold);
+    color: #fff !important;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    transition: background 0.18s;
+  }
+  .site-nav .nav-cta:hover { background: #9a7d48; }
+
+  /* mobile nav */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--ink-muted);
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: all 0.2s;
+  }
+  .mobile-nav-panel {
+    display: none;
+    position: fixed;
+    inset: 68px 0 auto 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 24px 20px;
+    z-index: 99;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .mobile-nav-panel.is-open { display: block; }
+  .mobile-nav-panel a,
+  .mobile-nav-panel button {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-align: left;
+    width: 100%;
+    transition: color 0.18s;
+  }
+  .mobile-nav-panel a:last-child,
+  .mobile-nav-panel button:last-child { border-bottom: none; }
+  .mobile-nav-panel a:hover,
+  .mobile-nav-panel button:hover { color: var(--gold); }
+  .mobile-nav-panel a.nav-active { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .site-nav { display: none; }
+    .mobile-menu-btn { display: flex; }
+  }
+
+  /* ─── RELATED SITUATIONS ───────────────────────────────── */
+  .related-situations {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--rule);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .related-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .related-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(184,151,90,0.35);
+    transform: translateY(-2px);
+  }
+  .related-card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .related-card-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+  /* ─── FOOTER ──────────────────────────────────────────── */
+  .pvu-footer {
+    background: #0e0e0e;
+    padding: 52px clamp(20px, 5vw, 64px) 32px;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+  }
+  .pvu-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .pvu-footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+  }
+  .pvu-footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    max-width: 260px;
+  }
+  .pvu-footer-col h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .pvu-footer-col ul { list-style: none; }
+  .pvu-footer-col ul li { margin-bottom: 9px; }
+  .pvu-footer-col ul li a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+  }
+  .pvu-footer-col ul li a:hover { color: rgba(255,255,255,0.8); }
+  .pvu-footer-phone {
+    color: rgba(255,255,255,0.7) !important;
+    font-weight: 500;
+  }
+  .pvu-footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin: 36px auto 20px;
+    max-width: 1200px;
+  }
+  .pvu-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.22);
+    line-height: 1.65;
+  }
+  .pvu-footer-legal {
+    max-width: 640px;
+  }
+  @media (max-width: 860px) {
+    .pvu-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .pvu-footer-bottom { flex-direction: column; gap: 10px; }
+  }
+  }
+
+
+</style>
+</head>
+<body>
+
+<!-- ─── HEADER ─────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-name">Property Value Unlock</span>
+      <span class="logo-sub">Suburban Illinois Land Review</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/can-i-split-my-property">Can I Split My Property</a>
+      <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+      <a href="/how-much-is-my-land-worth">Land Value</a>
+      <a href="/my-house-is-on-two-lots">Two Lots</a>
+      <button class="nav-cta" data-open-review="true">Get Clarity</button>
+    </nav>
+    <div class="header-right">
+      <a href="tel:2244079500" class="header-phone">224-407-9500</a>
+      <button class="btn-primary" data-open-review="true">Get a Real Answer on Your Property</button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="/can-i-split-my-property">Can I Split My Property</a>
+  <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+  <a href="/how-much-is-my-land-worth">Land Value</a>
+  <a href="/my-house-is-on-two-lots">Two Lots</a>
+  <button data-open-review="true">Get Clarity</button>
+</div>
+
+<!-- ─── HERO ────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-up">Split vs. Full Sale — Which Path Actually Makes More Sense for Your Property</p>
+      <h1 class="fade-up delay-1">Split or sell whole — most owners are pursuing one of these without having confirmed whether it's actually the <em>smarter financial move.</em></h1>
+      <p class="hero-sub fade-up delay-2">Most owners arrive at this decision with a preference they haven't verified. Some pursue a split because it sounds like more upside — without confirming the split path is viable or that the net outcome actually clears the full-sale alternative. Others default to selling whole because it's simpler — without knowing whether they're leaving significant money on the table. This decision has real financial consequences either way. The right answer requires evaluating the actual property.</p>
+      <p class="hero-sub fade-up delay-2" style="font-size:15px; color:var(--ink-muted); margin-top:-20px; margin-bottom:36px;">Many owners only realize they chose the wrong path after the financial outcome is already set.</p>
+      <ul class="hero-bullets fade-up delay-3">
+        <li>More theoretical upside on paper does not mean more money in your pocket — split paths carry execution risk, timeline, and cost that often narrow the gap significantly</li>
+        <li>A full sale is not automatically the lesser path — for some properties, it's the financially smarter one, especially when split costs and timeline are accounted for</li>
+        <li>A split only works when the lot actually supports one</li>
+        <li>The right answer is property-specific — not a general rule</li>
+      </ul>
+      <div class="hero-ctas fade-up delay-4">
+        <button class="btn-primary" data-open-review="true" style="font-size:15px; padding:14px 28px;">Find Out Which Path Actually Produces the Better Outcome</button>
+        <a href="tel:2244079500" class="hero-phone-cta">or call 224-407-9500</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up delay-3">
+      <div class="hero-card-stack">
+        <div class="hero-stat-card">
+          <div class="stat-icon">⚖️</div>
+          <div class="stat-text">
+            <strong>More Upside Can Mean More Complexity</strong>
+            <span>Split paths involve approval, timeline, and execution risk</span>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-icon">🏠</div>
+          <div class="stat-text">
+            <strong>Simpler Is Not Always Better</strong>
+            <span>A full sale is sometimes the smarter financial outcome</span>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-icon">📐</div>
+          <div class="stat-text">
+            <strong>Split Only Works When the Lot Supports It</strong>
+            <span>Frontage, access, utilities, and zoning all have to align</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon">✓</div>
+          <div class="hero-badge-text">
+            <strong>Property-Specific Review Only</strong>
+            <span>We do not provide general answers without an address.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLARITY SECTION ─────────────────────────────────── -->
+<section class="clarity">
+  <div class="section-inner">
+    <p class="section-label">The Real Question</p>
+    <h2 class="section-title" style="color:#fff;">The right path is almost never obvious without evaluating the actual property — and acting on the wrong assumption is expensive.</h2>
+    <div class="clarity-grid">
+      <div class="clarity-copy">
+        <p>Most owners frame this as "more money versus simpler process." That framing misses what actually determines the answer — which is whether the split path holds up, what it costs, how long it takes, and whether the net outcome actually beats the alternative.</p>
+        <p style="font-style:italic; color:rgba(255,255,255,0.55); font-size:15px; border-left:2px solid var(--gold-light); padding-left:16px; margin-bottom:18px;">Most owners who go through this process find that the path they were initially leaning toward is not the one that actually makes the most financial sense.</p>
+        <p>Split paths that look attractive from the outside often fail on frontage, utility access, or structure placement. The theoretical upside disappears when the real constraints are evaluated. <strong>More potential value on paper does not translate to more money in your pocket — which is why <a href="/how-much-is-my-land-worth" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">understanding what your land can actually support and what that's worth</a> comes before the split-vs-sell decision.</strong></p>
+        <p>On the other side, some full-property sales leave real money on the table — especially when the lot could support a viable split that a developer or builder would pay a significant premium to acquire.</p>
+        <p><strong>This is where the decision is actually made — not at the surface level.</strong> The right path depends on what the property can actually support and what the realistic net outcome looks like on each path. That determination cannot be made without examining the actual constraints.</p>
+      </div>
+      <div class="clarity-points">
+        <div class="clarity-point">
+          <p class="clarity-point-q">Common assumption</p>
+          <p class="clarity-point-a">"A split has to be better — I'd be selling two things instead of one."</p>
+        </div>
+        <div class="clarity-point">
+          <p class="clarity-point-q">The real question</p>
+          <p class="clarity-point-a">Can the lot actually support a viable split? What are the municipal constraints? What would the timeline, costs, and approval risk look like? Is the net outcome actually better — or just theoretically higher?</p>
+        </div>
+        <div class="clarity-point">
+          <p class="clarity-point-q">What we do</p>
+          <p class="clarity-point-a">We evaluate your specific property and tell you which path actually makes more financial sense — split, partial sale, or full sale — and why. This is usually the decision that determines the actual financial outcome, and most owners make it without the information that would tell them whether they're right.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCENARIO SECTION ────────────────────────────────── -->
+<section class="scenarios">
+  <div class="section-inner">
+    <p class="section-label">Recognize Your Situation</p>
+    <h2 class="section-title">Does one of these sound like your situation?</h2>
+    <p class="section-sub">If you're weighing this decision, committing to either path before evaluating the actual property is how owners end up on the wrong one.</p>
+    <div class="scenarios-grid">
+      <div class="scenario-card">
+        <span class="scenario-icon">🔍</span>
+        <h4>I think I may be able to split off part of the property — but I'm not sure if it actually works</h4>
+      </div>
+      <div class="scenario-card">
+        <span class="scenario-icon">📊</span>
+        <h4>I want to know if a split is actually worth the timeline, the cost, and the approval risk — or whether the full-sale path produces a comparable or better net outcome</h4>
+      </div>
+      <div class="scenario-card">
+        <span class="scenario-icon">⏱️</span>
+        <h4>I don't want to overcomplicate something that should be a relatively straightforward sale</h4>
+      </div>
+      <div class="scenario-card">
+        <span class="scenario-icon">💰</span>
+        <h4>I want to know if selling the whole property might actually net me more than splitting it</h4>
+      </div>
+      <div class="scenario-card">
+        <span class="scenario-icon">🗺️</span>
+        <h4>I have extra land but I'm not sure if it's worth carving out separately or just including in the sale</h4>
+      </div>
+      <div class="scenario-card">
+        <span class="scenario-icon">🎯</span>
+        <h4>I want the path that actually produces the best financial outcome — not the one that sounds better before anyone has evaluated the property</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMPARISON SECTION ──────────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">Comparing the Paths</p>
+    <h2 class="section-title">Split path vs. full-sale path — what's actually true about each one.</h2>
+    <p class="section-sub">Neither path is automatically better. What matters is which one actually produces the better net outcome for your specific property, your specific constraints, and your specific goals.</p>
+    <div class="comparison-grid">
+      <div class="comparison-col">
+        <div class="comparison-col-header">
+          <h3>Split the Property</h3>
+          <p>Higher ceiling — but more moving parts</p>
+        </div>
+        <div class="comparison-col-body">
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Possible higher total value if the split is viable and executes cleanly
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Option to keep the home and unlock value from the land independently
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            More moving parts — zoning, surveying, municipal approval, utility separation
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot red"></span>
+            Municipal approval risk — some splits that look viable do not get approved
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot red"></span>
+            Frontage, access, utility, and layout constraints can eliminate the path entirely
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot red"></span>
+            Longer timeline with more cost, uncertainty, and execution risk built in
+          </div>
+        </div>
+      </div>
+      <div class="comparison-col">
+        <div class="comparison-col-header">
+          <h3>Sell the Full Property</h3>
+          <p>Cleaner execution — and sometimes the smarter outcome</p>
+        </div>
+        <div class="comparison-col-body">
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Simpler execution — one transaction, one buyer, one closing
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Faster resolution with a cleaner, more predictable path to close
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Avoids the cost, delay, and risk built into the split approval process
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Some buyers value the full site more than two separate parcels would net
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Sometimes the smarter financial outcome after accounting for split costs and timeline
+          </div>
+          <div class="comparison-item">
+            <span class="ci-dot"></span>
+            Appropriate when the lot does not actually support a practical split
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HARD TRUTH SECTION ──────────────────────────────── -->
+<section class="hard-truth">
+  <div class="section-inner">
+    <p class="section-label">What People Miss</p>
+    <h2 class="section-title" style="color:#fff;">Why the split path often looks more attractive than it actually is — and what owners find out when they run the real numbers.</h2>
+    <div class="clarity-grid">
+      <div class="clarity-copy">
+        <p>Theoretical upside is not the same as realized value. The gap between what a split could yield and what it actually produces — after survey costs, legal fees, utility separation, municipal filing, approval delays, and timeline carrying costs — is often much narrower than owners expect. For some properties, that gap closes entirely.</p>
+        <p style="font-size:15px; color:rgba(255,255,255,0.5); font-style:italic;">Most owners who end up on the wrong path committed to it before anyone had evaluated whether it was right for them.</p>
+        <p>Some properties do not support a practical split. The lot size may qualify on paper, but frontage, access, utility routing, or the position of the existing structure makes a real split unworkable. <strong>Finding that out before you start the process saves time and money — and often surfaces a better path.</strong></p>
+        <p>Some properties are genuinely more valuable intact. A developer may pay more for the full site than two separate parcels would yield — and in some cases, significantly more. Or the added complexity of the split path simply is not worth it given the likely outcome.</p>
+        <p><strong>Some owners prioritize certainty, speed, and a clean process over maximizing theoretical upside.</strong> That's a completely rational position — and a full sale, when the property supports it, can serve those priorities well while still producing a strong outcome.</p>
+      </div>
+      <div class="clarity-points">
+        <div class="clarity-point">
+          <p class="clarity-point-q">The real cost of a split path</p>
+          <p class="clarity-point-a">Survey costs, attorney fees, municipal filing fees, utility separation, and carrying costs during an approval process that can run months — these reduce the theoretical upside before anything closes. The net difference between the split path and the full-sale path is often far smaller than the gross numbers suggest.</p>
+        </div>
+        <div class="clarity-point">
+          <p class="clarity-point-q">Municipal approval is not guaranteed</p>
+          <p class="clarity-point-a">Even properties that appear to meet the requirements can face denial, conditions, or requirements that make the path unworkable. Approval risk is real — and it is property-specific.</p>
+        </div>
+        <div class="clarity-point">
+          <p class="clarity-point-q">Time has a cost too</p>
+          <p class="clarity-point-a">A split path can add months — sometimes well over a year — to the process. For many owners, the certainty and speed of a full sale is worth more than the theoretical upside of a split that may or may not close.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REFRAME SECTION ──────────────────────────────────── -->
+<section class="reframe">
+  <div class="section-inner reframe-inner">
+    <p class="section-label">The Right Question</p>
+    <h2 class="section-title">The question is not "which path sounds better."</h2>
+    <p class="reframe-answer">"Which path actually produces the better net outcome — for this property, with its specific constraints, in the current market?"</p>
+    <p class="reframe-body">That question requires evaluating the actual property — its lot dimensions, zoning, municipal rules, access situation, and what realistic execution of each path looks like. Without that, you're making a significant financial decision based on a preference, not an analysis. Most owners who go through this review end up on the right path — and are better off financially for having chosen it deliberately rather than assumed it.</p>
+  </div>
+</section>
+
+<!-- ─── REVIEW OFFER SECTION ────────────────────────────── -->
+<section class="offer" id="review">
+  <div class="section-inner">
+    <p class="section-label">The Review</p>
+    <h2 class="section-title">Split vs. Full Sale Property Review</h2>
+    <p class="section-sub">A focused property evaluation to determine whether a split is actually viable, whether the split path is worth the complexity, and whether a full sale may be the smarter move.</p>
+    <p style="font-size:14px; color:var(--ink-muted); margin-top:14px; font-style:italic;">Every review is based on a specific property. We do not provide general answers without an address.</p>
+    <div class="offer-inner-grid">
+      <div class="offer-box">
+        <div class="offer-box-header">
+          <h3>This is for</h3>
+          <p>Owners with a real property and a real decision to make</p>
+        </div>
+        <ul class="offer-list">
+          <li><span class="check">✓</span>Homeowners actively weighing whether to split or sell the full property</li>
+          <li><span class="check">✓</span>Owners who want to know if a split is actually viable before pursuing it</li>
+          <li><span class="check">✓</span>People who want to understand whether their property is stronger as a full sale</li>
+          <li><span class="check">✓</span>Owners with a specific suburban Illinois property and a specific question</li>
+          <li><span class="check">✓</span>Anyone who wants honest direction — not a push toward a transaction</li>
+        </ul>
+      </div>
+      <div class="offer-box">
+        <div class="offer-box-header" style="background: #3a3a3a;">
+          <h3>This is not for</h3>
+          <p>We want to be direct about scope</p>
+        </div>
+        <ul class="offer-list not">
+          <li><span class="check">✗</span>Vague inquiries without a specific property to evaluate</li>
+          <li><span class="check">✗</span>General split or zoning questions not tied to a real address</li>
+          <li><span class="check">✗</span>People looking for a casual opinion with no intention to act</li>
+          <li><span class="check">✗</span>Requests for formal appraisals, surveys, or engineering reports</li>
+          <li><span class="check">✗</span>Properties located outside suburban Illinois</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <button class="btn-primary gold" data-open-review="true" style="font-size:15px; padding:14px 32px;">Find Out Which Path Actually Produces the Better Outcome &rarr;</button>
+      <p style="font-size:13px; color:var(--ink-faint); margin-top:14px;">Takes 2–3 minutes. No commitment. You'll get a clear read on which path makes the most sense for your property.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS SECTION ─────────────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Three steps to a clear answer.</h2>
+    <p class="section-sub">A focused intake built around your specific property. Every review requires a real address and a real question.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Submit Your Property Details</h4>
+        <p>Complete the property intake with your address, lot information, and what you're trying to determine. The more specific the question, the more useful the review.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>We Review the Property and Likely Paths</h4>
+        <p>We look at zoning, lot dimensions, frontage, utility access, municipal rules, and layout to evaluate what a split path would actually require — and whether a full sale may be the stronger move.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>You Get Clear Direction</h4>
+        <p>We tell you honestly what path makes the most sense for your property and situation. If the split is not viable, we'll say so. If the full sale is the smarter financial move, we'll say that too. You'll have a clear direction before spending anything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OPTIONS SECTION ─────────────────────────────────── -->
+<section class="options">
+  <div class="section-inner">
+    <p class="section-label">Possible Outcomes</p>
+    <h2 class="section-title">Different properties lead to different decisions.</h2>
+    <p class="section-sub">The review tells you which of these actually applies to your situation — not which one sounds most appealing.</p>
+    <div class="options-grid">
+      <div class="option-card">
+        <span class="option-tag">Path A</span>
+        <h4>Split and Retain the Home</h4>
+        <p>If the lot supports it, selling a back or side parcel while keeping the existing home may unlock significant value without requiring a move.</p>
+      </div>
+      <div class="option-card">
+        <span class="option-tag">Path B</span>
+        <h4>Sell Part of the Land</h4>
+        <p>In some cases, a carve-out of part of the lot may be structured as a land sale without a formal split. This depends heavily on the specific property and municipality.</p>
+      </div>
+      <div class="option-card featured">
+        <span class="option-tag">Path C</span>
+        <h4>Sell the Full Property</h4>
+        <p>For some properties and situations, a full sale is the cleaner, faster, and financially smarter path. We evaluate this alongside the split option — not as a fallback.</p>
+      </div>
+      <div class="option-card">
+        <span class="option-tag">Path D</span>
+        <h4>Determine a Split Is Not Worth Pursuing</h4>
+        <p>Sometimes the right answer is that the split path does not make sense for this property. Knowing that clearly — before you spend time and money — is a useful outcome.</p>
+      </div>
+      <div class="option-card">
+        <span class="option-tag">Path E</span>
+        <h4>Determine the Property Is Strongest As-Is</h4>
+        <p>Some properties are more valuable intact. A buyer may pay more for the full site than two separate parcels would net. The review surfaces this when it's the case.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST SECTION ───────────────────────────────────── -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">How We Work</p>
+    <h2 class="section-title">Practical. Property-specific. No filler.</h2>
+    <div class="trust-pillars">
+      <div class="trust-pillar">
+        <h4>Suburban Illinois Focus</h4>
+        <p>We work specifically in suburban Illinois communities, where lot standards, municipal rules, and land dynamics are what we know best.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>Both Paths Evaluated</h4>
+        <p>We look at the split path and the full-sale path together — not with a predetermined preference for either one. The goal is the right answer for your property.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>Honest Direction</h4>
+        <p>If the split is not viable, we'll tell you. If the full sale is the smarter move, we'll say that. We're not here to push a transaction that doesn't serve your situation.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>Property-Specific Review</h4>
+        <p>We evaluate your actual property — not a hypothetical. General questions get general answers. Specific properties get real analysis.</p>
+      </div>
+    </div>
+    <div class="trust-statement">
+      <blockquote>"The goal is to determine what path actually makes the most sense for your property — not to push you toward the option that sounds better on paper."</blockquote>
+      <cite>Property Value Unlock — Suburban Illinois</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RELATED SITUATIONS ──────────────────────────────── -->
+<section class="related-situations" style="padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 64px);">
+  <div class="section-inner">
+    <p class="section-label">Related situations</p>
+    <div class="related-grid">
+    <a href="/how-much-is-my-land-worth" class="related-card">
+      <div class="related-card-title">How Much Is My Land Worth</div>
+      <div class="related-card-desc">Value is what drives the split-vs-sell decision. Start here.</div>
+    </a>
+    <a href="/can-i-sell-part-of-my-yard" class="related-card">
+      <div class="related-card-title">Can I Sell Part of My Yard</div>
+      <div class="related-card-desc">If a partial sale is on the table, understand when it actually works.</div>
+    </a>
+    <a href="/can-i-split-my-property" class="related-card">
+      <div class="related-card-title">Can I Split My Property</div>
+      <div class="related-card-desc">Know whether a split is even viable before deciding between paths.</div>
+    </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ────────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="section-inner">
+    <p class="section-label">Find Out Which Path Actually Produces the Better Outcome</p>
+    <h2>Find out which path — split or full sale — actually makes sense for your property, before committing to one that may not.</h2>
+    <p>A property-specific review. Most owners who go through this end up on a better path than they would have defaulted to — not because we pointed them toward more complexity, but because we told them what the actual numbers and constraints support.</p>
+    <div class="final-cta-buttons">
+      <button class="btn-primary gold" data-open-review="true" style="font-size:16px; padding:16px 36px;">Find Out Which Path Actually Produces the Better Outcome</button>
+      <a href="tel:2244079500" class="btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.3);">Call 224-407-9500</a>
+    </div>
+    <p class="cta-phone-line">Prefer to talk first? <a href="tel:2244079500">Call or text 224-407-9500</a> — we're direct about whether we can help.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────────── -->
+<footer class="pvu-footer">
+  <div class="pvu-footer-inner">
+    <div>
+      <p class="pvu-footer-brand">Property Value Unlock</p>
+      <p class="pvu-footer-tagline">Suburban Illinois property analysis and land value review. Helping homeowners understand what their property may actually support.</p>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/can-i-split-my-property">Can I Split My Property</a></li>
+        <li><a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a></li>
+        <li><a href="/how-much-is-my-land-worth">Land Value</a></li>
+        <li><a href="/my-house-is-on-two-lots">Two Lots</a></li>
+        <li><a href="/split-vs-sell-full-property">Split vs Sell</a></li>
+      </ul>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:2244079500" class="pvu-footer-phone">224-407-9500</a></li>
+        <li><a href="javascript:void(0)" data-open-review="true">Get a Real Answer on Your Property</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="pvu-footer-divider">
+  <div class="pvu-footer-bottom">
+    <span>&copy; 2025 Property Value Unlock. All rights reserved.</span>
+    <span class="pvu-footer-legal">This site does not provide legal, zoning, engineering, or survey advice. Reviews are based on specific property information provided by homeowners.</span>
+  </div>
+</footer>
+
+<div class="review-modal-backdrop" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="review-modal" id="reviewModalPanel">
+    <div class="review-modal-header">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <p class="modal-eyebrow">Property Value Unlock</p>
+      <h2 id="modalTitle">Get a Real Answer on Your Property</h2>
+      <p>This starts with your address. Takes 2–3 minutes. You'll get clear, property-specific direction — not a generic answer.</p>
+      <p style="font-size:12px;color:var(--ink-faint);margin-top:10px;">Prefer to talk first? Call or text <a href="tel:2244079500" style="color:var(--gold);">224-407-9500</a>.</p>
+    </div>
+    <div class="review-modal-body">
+      <iframe src="https://api.leadconnectorhq.com/widget/survey/vL5ol0Pulhz4tGoSjA46" style="border:none;width:100%;" scrolling="no" id="vL5ol0Pulhz4tGoSjA46" title="survey"></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var backdrop = document.getElementById('reviewModal');
+  var closeBtn = document.getElementById('modalClose');
+  var mobileBtn = document.getElementById('mobileMenuBtn');
+  var mobilePanel = document.getElementById('mobileNavPanel');
+
+  function openModal() {
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (mobilePanel) mobilePanel.classList.remove('is-open');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeModal() {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-review="true"]').forEach(function(el){
+    el.addEventListener('click', openModal);
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', function(e){ if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && backdrop.classList.contains('is-open')) closeModal(); });
+
+  if (mobileBtn && mobilePanel) {
+    mobileBtn.addEventListener('click', function(){
+      mobilePanel.classList.toggle('is-open');
+    });
+  }
+})();
+</script>
+</body>
+</html>

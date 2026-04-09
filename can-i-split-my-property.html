@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Can I Split My Property? | Property Value Unlock</title>
+  <meta name="description" content="Wondering if your suburban Illinois property can be subdivided or split? Get a real answer based on your specific lot — not general advice." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── CSS Variables ─── */
+    :root {
+      --ink: #141414;
+      --ink-soft: #3a3a3a;
+      --ink-muted: #6b6b6b;
+      --rule: #e2e0da;
+
+      --bg: #f8f7f4;
+      --bg-warm: #f2f0eb;
+      --bg-card: #ffffff;
+
+      --gold: #b8975a;
+      --gold-light: #d4b47a;
+      --gold-bg: #f9f5ee;
+
+      --accent-green: #2d5a3d;
+
+      --font-serif:  'Playfair Display', Georgia, serif;
+      --font-sans:   'DM Sans', system-ui, sans-serif;
+      --radius-sm:   4px;
+      --radius-md:   8px;
+      --radius-lg:   16px;
+      --transition:  0.22s ease;
+      --max-w:       1100px;
+      --section-gap: 100px;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: var(--font-sans); }
+
+    /* ─── Layout Helpers ─── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .section { padding: var(--section-gap) 0; }
+    .section--alt { background: var(--bg-warm); }
+    .section--alt2 { background: var(--bg-card); }
+
+    /* ─── Typography ─── */
+    h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; line-height: 1.18; color: var(--ink); }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+    h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
+    h3 { font-size: 1.25rem; }
+    .label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: block;
+    }
+    .lead {
+      font-size: 1.15rem;
+      line-height: 1.72;
+      color: var(--ink-muted);
+      max-width: 660px;
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: var(--transition);
+      border: none;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--ink);
+      color: #ffffff;
+    }
+    .btn--primary:hover {
+      background: var(--ink-soft);
+      transform: translateY(-1px);
+    }
+    .btn--outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--rule);
+    }
+    .btn--outline:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--ink-muted);
+      padding: 14px 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn--ghost:hover { color: var(--ink); }
+    
+    
+    
+    
+    
+    
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 180px 0 120px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse 60% 50% at 80% 30%, rgba(184,151,90,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; max-width: 780px; }
+    .hero h1 { margin-bottom: 28px; }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 1.18rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
+      margin-bottom: 40px;
+      max-width: 620px;
+    }
+    .hero-sub strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .hero-bullets {
+      list-style: none;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+    }
+    .hero-bullets li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      min-width: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 8px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── CORE TRUTH ─── */
+    .truth-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 64px;
+    }
+    .truth-item {
+      border-left: 1px solid var(--rule);
+      padding-left: 28px;
+    }
+    .truth-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .truth-item p {
+      font-size: 0.94rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+    .truth-closing {
+      margin-top: 56px;
+      padding: 32px 36px;
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--gold);
+      background: var(--gold-bg);
+      font-size: 0.97rem;
+      line-height: 1.72;
+      color: var(--ink-muted);
+      max-width: 720px;
+    }
+    .truth-closing strong { color: var(--ink); font-weight: 500; }
+
+    /* ─── SCENARIOS ─── */
+    .scenarios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 56px;
+    }
+    .scenario-card {
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      padding: 28px 28px 32px;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .scenario-card:hover {
+      border-color: var(--gold);
+      background: var(--gold-bg);
+    }
+    .scenario-icon {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--ink-muted);
+    }
+    .scenario-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .scenario-card p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 1.66;
+    }
+    .scenario-card .scenario-note {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── FACTORS ─── */
+    .factors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .factor-card {
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+    }
+    .factor-number {
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 400;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .factor-card h3 {
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .factor-card p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── WHY MOST DON'T QUALIFY ─── */
+    .why-section { position: relative; }
+    .why-list {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .why-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+    .why-item:first-child { border-top: 1px solid var(--rule); }
+    .why-item-label {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 500;
+      color: var(--ink);
+      padding-top: 2px;
+    }
+    .why-item-body {
+      font-size: 0.94rem;
+      color: var(--ink-muted);
+      line-height: 1.72;
+    }
+    .why-item-body strong { color: var(--ink); font-weight: 500; }
+    .why-close {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .why-close-box {
+      padding: 32px;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+    }
+    .why-close-box.accent {
+      border-color: var(--gold);
+      background: var(--gold-bg);
+    }
+    .why-close-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+    .why-close-box p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.68;
+    }
+
+    /* ─── REVIEW SECTION ─── */
+    .review-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .review-outcomes {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .outcome-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-sm);
+    }
+    .outcome-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+    .outcome-dot.green  { background: #3a7a52; }
+    .outcome-dot.yellow { background: #b8975a; }
+    .outcome-dot.red    { background: #a05050; }
+    .outcome-dot.blue   { background: #4a6a8a; }
+    .outcome-row p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+    .outcome-row p strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 500;
+      margin-bottom: 2px;
+      font-size: 0.92rem;
+    }
+    .review-cta-side {
+      position: sticky;
+      top: 96px;
+    }
+    .review-cta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-top: 2px solid var(--gold);
+      border-radius: var(--radius-md);
+      padding: 40px 36px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+    .review-cta-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    .review-cta-card p {
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .review-address-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── PROCESS ─── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(16.666% + 24px);
+      right: calc(16.666% + 24px);
+      height: 1px;
+      background: var(--rule);
+    }
+    .process-step { text-align: center; }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+    .process-step h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+    .process-step p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      text-align: center;
+      padding: var(--section-gap) 0;
+    }
+    .final-cta h2 {
+      max-width: 640px;
+      margin: 0 auto 24px;
+    }
+    .final-cta p {
+      max-width: 520px;
+      margin: 0 auto 40px;
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+    .final-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 11px 22px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    background: var(--accent-green);
+    transform: translateY(-1px);
+  }
+
+  /* ─── HEADER ─────────────────────────────────────────── */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248,247,244,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 clamp(20px, 5vw, 64px);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-phone {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .header-phone:hover { color: var(--gold); }
+
+/* ─── TOP NAV ──────────────────────────────────────────── */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .site-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    padding: 6px 10px;
+    border-radius: 3px;
+    transition: color 0.18s, background 0.18s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover { color: var(--ink); background: var(--bg-warm); }
+  .site-nav a.nav-active {
+    color: var(--ink);
+    background: var(--bg-warm);
+    font-weight: 600;
+  }
+  .site-nav .nav-cta {
+    background: var(--gold);
+    color: #fff !important;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    transition: background 0.18s;
+  }
+  .site-nav .nav-cta:hover { background: #9a7d48; }
+
+  /* mobile nav */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--ink-muted);
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: all 0.2s;
+  }
+  .mobile-nav-panel {
+    display: none;
+    position: fixed;
+    inset: 68px 0 auto 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 24px 20px;
+    z-index: 99;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .mobile-nav-panel.is-open { display: block; }
+  .mobile-nav-panel a,
+  .mobile-nav-panel button {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-align: left;
+    width: 100%;
+    transition: color 0.18s;
+  }
+  .mobile-nav-panel a:last-child,
+  .mobile-nav-panel button:last-child { border-bottom: none; }
+  .mobile-nav-panel a:hover,
+  .mobile-nav-panel button:hover { color: var(--gold); }
+  .mobile-nav-panel a.nav-active { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .site-nav { display: none; }
+    .mobile-menu-btn { display: flex; }
+  }
+
+  /* ─── RELATED SITUATIONS ───────────────────────────────── */
+  .related-situations {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--rule);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .related-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .related-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(184,151,90,0.35);
+    transform: translateY(-2px);
+  }
+  .related-card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .related-card-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── STANDARDIZED FOOTER ──────────────────────────────── */
+  /* ─── FOOTER ──────────────────────────────────────────── */
+  .pvu-footer {
+    background: #0e0e0e;
+    padding: 52px clamp(20px, 5vw, 64px) 32px;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+  }
+  .pvu-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .pvu-footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+  }
+  .pvu-footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    max-width: 260px;
+  }
+  .pvu-footer-col h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .pvu-footer-col ul { list-style: none; }
+  .pvu-footer-col ul li { margin-bottom: 9px; }
+  .pvu-footer-col ul li a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+  }
+  .pvu-footer-col ul li a:hover { color: rgba(255,255,255,0.8); }
+  .pvu-footer-phone {
+    color: rgba(255,255,255,0.7) !important;
+    font-weight: 500;
+  }
+  .pvu-footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin: 36px auto 20px;
+    max-width: 1200px;
+  }
+  .pvu-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.22);
+    line-height: 1.65;
+  }
+  .pvu-footer-legal {
+    max-width: 640px;
+  }
+  @media (max-width: 860px) {
+    .pvu-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .pvu-footer-bottom { flex-direction: column; gap: 10px; }
+  }
+  }
+
+</style>
+<link rel="canonical" href="https://propertyvalueunlock.com/can-i-split-my-property">
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-name">Property Value Unlock</span>
+      <span class="logo-sub">Suburban Illinois Land Review</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/can-i-split-my-property" class="nav-active">Can I Split My Property</a>
+      <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+      <a href="/how-much-is-my-land-worth">Land Value</a>
+      <a href="/my-house-is-on-two-lots">Two Lots</a>
+      <button class="nav-cta" data-open-review="true">Get Clarity</button>
+    </nav>
+    <div class="header-right">
+      <a href="tel:2244079500" class="header-phone">224-407-9500</a>
+      <button class="btn-primary" data-open-review="true">Get a Real Answer on Your Property</button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="/can-i-split-my-property" class="nav-active">Can I Split My Property</a>
+  <a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a>
+  <a href="/how-much-is-my-land-worth">Land Value</a>
+  <a href="/my-house-is-on-two-lots">Two Lots</a>
+  <button data-open-review="true">Get Clarity</button>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="label">Property Split Feasibility — Suburban Illinois</span>
+      <h1>Most properties that look splittable <em>aren't</em> — and most owners find that out after they've already spent something.</h1>
+      <p class="hero-sub">
+        Most properties that look like they should support a split don't — and the gap between "looks like it could work" and "actually works" is exactly where owners spend the most money without a result. Zoning is just one layer. <a href="/frontage-and-lot-width" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Frontage, lot width, and the minimum requirements for a second buildable lot</a> — along with utilities and how your existing structure sits — are what actually determine the outcome. Finding this out before you commit to a path is what a review is for.
+      </p>
+      <ul class="hero-bullets">
+        <li>Zoning permission is the floor, not the answer — the real constraints come after</li>
+        <li>The way your lot is laid out matters more than people expect</li>
+        <li>Most properties fail on frontage, utility access, or structure placement before zoning even comes into the picture</li>
+      </ul>
+      <div class="hero-actions">
+        <button class="btn btn--primary" data-open-review="true">Find Out What Your Property Actually Supports</button>
+        <a href="tel:2244079500" class="btn btn--ghost">
+          Call 224-407-9500
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CORE TRUTH ─── -->
+<section class="section section--alt">
+  <div class="container">
+    <span class="label">The Reality</span>
+    <h2 style="max-width:640px;">The split question is almost never decided by lot size</h2>
+    <div class="divider"></div>
+    <p class="lead">
+      The assumption is almost universal: if the lot is big enough, a split should be possible. That assumption is what sends owners down expensive paths that were never viable. The lot size is where the conversation starts, not where it ends.
+    </p>
+
+    <div class="truth-grid">
+      <div class="truth-item">
+        <h3>What most owners track</h3>
+        <p>Square footage. The sense that the lot is larger than most on the street. An assumption that extra land equals a split opportunity. This is where most owners start — and, for many, it's where they stay until the real answer becomes expensive.</p>
+      </div>
+      <div class="truth-item">
+        <h3>What actually decides the outcome</h3>
+        <p>Minimum lot dimensions — for both resulting parcels. Where the existing structure sits relative to where a lot line would need to fall. Whether the new parcel can be independently served by utilities. Frontage. And which municipality controls the property — because the rules vary significantly, and your town's code is the only one that matters.</p>
+      </div>
+      <div class="truth-item">
+        <h3>The zoning misconception</h3>
+        <p>Zoning permission means the municipality doesn't prohibit it in principle. It says nothing about whether your specific lot can actually support it. <a href="/frontage-and-lot-width" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Frontage and lot width</a> are often what close the path — independent of what the zoning map says.</p>
+      </div>
+      <div class="truth-item">
+        <h3>Why layout matters more</h3>
+        <p>A large rectangular lot with a house centered on it leaves little room to create two independently viable parcels. The geometry of what remains after the split has to work — not just the total square footage.</p>
+      </div>
+    </div>
+
+    <div class="truth-closing">
+      <strong>Most properties we evaluate do not support a straightforward split.</strong> Some have real constraints that close the path entirely. Some have constraints that are workable with the right approach. A few are genuinely strong candidates. The only way to know which category yours falls into is to evaluate the actual property — not assume from the outside.
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCENARIOS ─── -->
+<section class="section">
+  <div class="container">
+    <span class="label">Does This Sound Like Your Situation?</span>
+    <h2>Where does your situation begin?</h2>
+    <div class="divider"></div>
+    <p class="lead">Most people arrive at this question from one of these places. Each one has a different constraint profile — and a different risk of pursuing the wrong path without checking first.</p>
+
+    <div class="scenarios-grid">
+      <div class="scenario-card">
+        <div class="scenario-icon">▭</div>
+        <h3>I have a large backyard</h3>
+        <p>Backyard depth is not the determining factor. Width at the street, utility access, and where the existing structure sits often close this path before depth is even relevant. Most owners don't realize this until they've pursued it.</p>
+        <p class="scenario-note">Frontage and access are the first questions here — and the most likely to close the path</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-icon">⌂</div>
+        <h3>I want to build another home</h3>
+        <p>A new structure requires its own lot — or in some cases, an accessory dwelling arrangement. Which path applies depends on your municipality and how your current property is configured.</p>
+        <p class="scenario-note">Depends heavily on zoning type</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-icon">◻</div>
+        <h3>I want to sell part of my land</h3>
+        <p>Selling part of a property requires a formal subdivision or lot split first. The remaining parcel has to remain viable — both under local code and in the eyes of any lender who may be involved. This requirement surprises people who assumed a partial sale was simpler than it is.</p>
+        <p class="scenario-note">Recordable split required in most cases</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-icon">⌗</div>
+        <h3>I think my lot is oversized</h3>
+        <p>Oversized relative to what the neighborhood averages doesn't always mean oversized relative to what your municipality requires for two independent lots. The numbers need to be run against specific code.</p>
+        <p class="scenario-note">Minimum lot sizes vary by town</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-icon">⊞</div>
+        <h3>I've heard zoning might allow it</h3>
+        <p>Zoning permission is the floor, not the ceiling. A zone that permits splits still requires each resulting parcel to meet dimensional, utility, and access standards independently.</p>
+        <p class="scenario-note">Zoning permission opens the door — frontage, utilities, and layout determine whether you can walk through it</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-icon">◎</div>
+        <h3>I don't know where to start</h3>
+        <p>That's the most honest place to be. Most people who "did some research" have partial information — which can lead to overconfidence or unnecessary discouragement. A proper review starts with your address.</p>
+        <p class="scenario-note">A review clarifies quickly</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FACTORS ─── -->
+<section class="section section--alt">
+  <div class="container">
+    <span class="label">Feasibility Factors</span>
+    <h2>What actually determines whether a split works</h2>
+    <div class="divider"></div>
+    <p class="lead">These are the six areas that determine split feasibility. Each one can independently prevent a split regardless of the others.</p>
+
+    <div class="factors-grid">
+      <div class="factor-card">
+        <span class="factor-number">01</span>
+        <h3>Lot Size</h3>
+        <p>Both resulting parcels must meet the minimum lot size for the zone. The total square footage of your current lot doesn't tell you whether each new lot will qualify independently.</p>
+      </div>
+      <div class="factor-card">
+        <span class="factor-number">02</span>
+        <h3>Frontage</h3>
+        <p>Every lot typically needs minimum street frontage. A large backyard parcel with no road access is usually not viable — regardless of how much land is involved.</p>
+      </div>
+      <div class="factor-card">
+        <span class="factor-number">03</span>
+        <h3>Utilities</h3>
+        <p>A new parcel needs independent utility connections — water, sewer, and in some cases gas and electric. Shared or tapped connections are rarely allowed by municipalities or lenders.</p>
+      </div>
+      <div class="factor-card">
+        <span class="factor-number">04</span>
+        <h3>Access</h3>
+        <p>A landlocked parcel — one accessible only through another private property — cannot typically be recorded as a separate lot without a formal easement, which adds complexity and cost.</p>
+      </div>
+      <div class="factor-card">
+        <span class="factor-number">05</span>
+        <h3>Structure Placement</h3>
+        <p>Where your existing home sits on the lot defines what's left. Setback requirements on both the existing and new parcel reduce the usable area significantly in many layouts.</p>
+      </div>
+      <div class="factor-card">
+        <span class="factor-number">06</span>
+        <h3>Municipality Rules</h3>
+        <p>Illinois has no statewide standard. What's permitted in one town can be completely different in the next. The municipality's specific code governs everything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY MOST DON'T QUALIFY ─── -->
+<section class="section">
+  <div class="container">
+    <span class="label">The Hard Part</span>
+    <h2 style="max-width:580px;">Why most splits fail — and why finding out early is worth far more than finding out late</h2>
+    <div class="divider"></div>
+
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-item-label">Lot size alone is not enough</div>
+        <div class="why-item-body">
+          A 20,000 square foot lot that splits into two 10,000 square foot parcels is not automatically viable. Both parcels must individually meet the minimum area, width, depth, and setback requirements for the zone — and many don't. <strong>The combined total is almost irrelevant. What matters is whether each resulting parcel can stand on its own.</strong>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-label">House placement blocks the split</div>
+        <div class="why-item-body">
+          If the existing home is centered on the lot, too close to the rear, or violates the setback requirements that would apply to the remaining parcel after a split — there may be no viable configuration. <strong>The structure doesn't move. The split line has to work around it.</strong>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-label">Frontage requirements kill deals</div>
+        <div class="why-item-body">
+          Frontage requirements are non-negotiable in most municipalities. Both resulting parcels must independently meet the minimum. Interior lots, backyard configurations, and narrow side parcels frequently fail here — sometimes before any other factor is evaluated. <strong>A new parcel without sufficient frontage cannot be recorded as a legal lot, regardless of how much total land is involved.</strong>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-label">Rules vary dramatically by town</div>
+        <div class="why-item-body">
+          There's no single Illinois standard. A property that qualifies for a split in one suburb may be completely ineligible half a mile away in the next town. <strong>The only way to know is to look at the specific code for the specific municipality your property sits in.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-close">
+      <div class="why-close-box">
+        <h3>Why this matters financially</h3>
+        <p>Owners who pursue a split without confirming these constraints often spend money on surveys, legal fees, or municipal filings — and find out afterward that the path was already closed. Getting clarity before committing to any of those steps is what makes the difference between a useful process and an expensive detour.</p>
+      </div>
+      <div class="why-close-box accent">
+        <h3>What a clear answer looks like</h3>
+        <p>A clear "no" is useful — it rules out a path before it costs you anything meaningful. A clear "yes" is more useful — it confirms the basis for real financial upside and tells you what the path forward actually looks like. Either way, having a real answer based on your actual property is worth considerably more than continuing to assume.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEW SECTION ─── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="review-inner">
+      <div>
+        <span class="label">What We Offer</span>
+        <h2>Property Split Feasibility Review</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.97rem;color:var(--ink-muted);line-height:1.72;margin-bottom:32px;">
+          A property-specific review evaluates the actual lot — not a hypothetical version of it. It identifies what the real constraints are, whether the split path holds up, and what direction makes the most sense for your specific situation.
+        </p>
+        <p style="font-size:0.97rem;color:var(--ink-muted);line-height:1.72;margin-bottom:36px;">
+          This is not a general consultation. We look at your specific lot, your municipality's code, your structure placement, and what the actual requirements demand. The outcome is a direct answer — not a list of things that might matter.
+        </p>
+
+        <h3 style="font-family:var(--font-serif);font-weight:500;margin-bottom:20px;font-size:1.15rem;">Where a review lands — the four real outcomes</h3>
+        <div class="review-outcomes">
+          <div class="outcome-row">
+            <div class="outcome-dot green"></div>
+            <p><strong>Viable split.</strong> Your property clears the key requirements. We tell you what the realistic path forward looks like and what to confirm next.</p>
+          </div>
+          <div class="outcome-row">
+            <div class="outcome-dot yellow"></div>
+            <p><strong>Needs restructuring</strong> A split may be possible with specific adjustments — variance, replatting, or reconfiguration. We identify what would be required.</p>
+          </div>
+          <div class="outcome-row">
+            <div class="outcome-dot red"></div>
+            <p><strong>Not worth pursuing.</strong> The constraints are significant enough that a split is unlikely to produce a viable outcome — ever, or without changes that aren't realistic. We tell you that directly, before you spend anything further.</p>
+          </div>
+          <div class="outcome-row">
+            <div class="outcome-dot blue"></div>
+            <p><strong>Different path makes more sense.</strong> For some properties, a full sale — structured around the land's actual potential — is the financially smarter move. We present what actually applies to your situation.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:28px;font-size:0.85rem;color:var(--ink-muted);line-height:1.65;border-top:1px solid var(--rule);padding-top:24px;">
+          Every review requires a real address. We evaluate your actual property — not a hypothetical. General answers are not useful here, and we don't provide them.
+        </p>
+      </div>
+
+      <div class="review-cta-side">
+        <div class="review-cta-card">
+          <span class="modal-header-label">Begin Here</span>
+          <h3>Find Out What Your Property Actually Supports</h3>
+          <p>This starts with your address. Takes 2–3 minutes. You'll get clear, property-specific direction — not a generic answer that may or may not apply to your situation.</p>
+          <button class="btn btn--primary" style="width:100%;justify-content:center;" data-open-review="true">
+            Request a Property-Specific Review
+          </button>
+          <p class="review-address-note">Or call us directly at <a href="tel:2244079500" style="color:var(--gold);">224-407-9500</a>. A property review begins with your address, not a general conversation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="section">
+  <div class="container">
+    <span class="label">How It Works</span>
+    <h2>Three steps to a clear answer</h2>
+    <div class="divider"></div>
+    <p class="lead">No lengthy process. No waiting for a callback. You submit your property and we do the work.</p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Submit Your Property</h3>
+        <p>Provide your address. That's where the analysis starts. We don't ask for anything that isn't directly relevant to the evaluation.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>We Evaluate the Constraints</h3>
+        <p>We review your lot dimensions, zoning code, structure placement, municipality requirements, and what a split would realistically require.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>You Get Clear Direction</h3>
+        <p>Not a general overview. A specific read on your property — what's possible, what's not, and what the viable paths forward look like.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RELATED SITUATIONS ──────────────────────────────── -->
+<section class="related-situations" style="padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 64px);">
+  <div class="section-inner">
+    <p class="section-label">Related situations</p>
+    <div class="related-grid">
+    <a href="/frontage-and-lot-width" class="related-card">
+      <div class="related-card-title">Frontage & Lot Width</div>
+      <div class="related-card-desc">Width at the street is often what rules a split out — before anything else.</div>
+    </a>
+    <a href="/utilities-and-access" class="related-card">
+      <div class="related-card-title">Utilities & Access</div>
+      <div class="related-card-desc">Can a new lot be independently served? This is where many splits quietly fail.</div>
+    </a>
+    <a href="/split-vs-sell-full-property" class="related-card">
+      <div class="related-card-title">Split vs Sell Full Property</div>
+      <div class="related-card-desc">Not sure which path makes more sense? Start here.</div>
+    </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="section section--alt">
+  <div class="container final-cta">
+    <span class="label" style="display:block;text-align:center;">The Next Step</span>
+    <h2>Find out what your lot can actually support — before you spend time or money on a path that may not be available to you.</h2>
+    <p>
+      A split that holds up is worth real money. A split that doesn't is worth knowing about before you've spent anything finding that out. Either way, a clear, property-specific answer is what determines what happens next.
+    </p>
+    <div class="final-actions">
+      <button class="btn btn--primary" data-open-review="true">Find Out What Your Property Actually Supports</button>
+      <a href="tel:2244079500" class="btn btn--outline">Call 224-407-9500</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="pvu-footer">
+  <div class="pvu-footer-inner">
+    <div>
+      <p class="pvu-footer-brand">Property Value Unlock</p>
+      <p class="pvu-footer-tagline">Suburban Illinois property analysis and land value review. Helping homeowners understand what their property may actually support.</p>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="/can-i-split-my-property">Can I Split My Property</a></li>
+        <li><a href="/can-i-sell-part-of-my-yard">Sell Part of My Yard</a></li>
+        <li><a href="/how-much-is-my-land-worth">Land Value</a></li>
+        <li><a href="/my-house-is-on-two-lots">Two Lots</a></li>
+        <li><a href="/split-vs-sell-full-property">Split vs Sell</a></li>
+      </ul>
+    </div>
+    <div class="pvu-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:2244079500" class="pvu-footer-phone">224-407-9500</a></li>
+        <li><a href="javascript:void(0)" data-open-review="true">Get a Real Answer on Your Property</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="pvu-footer-divider">
+  <div class="pvu-footer-bottom">
+    <span>&copy; 2025 Property Value Unlock. All rights reserved.</span>
+    <span class="pvu-footer-legal">This site does not provide legal, zoning, engineering, or survey advice. Reviews are based on specific property information provided by homeowners.</span>
+  </div>
+</footer>
+
+<div class="review-modal-backdrop" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="review-modal" id="reviewModalPanel">
+    <div class="review-modal-header">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <p class="modal-eyebrow">Property Value Unlock</p>
+      <h2 id="modalTitle">Get a Real Answer on Your Property</h2>
+      <p>This starts with your address. Takes 2–3 minutes. You'll get clear, property-specific direction — not a generic answer.</p>
+      <p style="font-size:12px;color:var(--ink-faint);margin-top:10px;">Prefer to talk first? Call or text <a href="tel:2244079500" style="color:var(--gold);">224-407-9500</a>.</p>
+    </div>
+    <div class="review-modal-body">
+      <iframe src="https://api.leadconnectorhq.com/widget/survey/vL5ol0Pulhz4tGoSjA46" style="border:none;width:100%;" scrolling="no" id="vL5ol0Pulhz4tGoSjA46" title="survey"></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var backdrop = document.getElementById('reviewModal');
+  var closeBtn = document.getElementById('modalClose');
+  var mobileBtn = document.getElementById('mobileMenuBtn');
+  var mobilePanel = document.getElementById('mobileNavPanel');
+
+  function openModal() {
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (mobilePanel) mobilePanel.classList.remove('is-open');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeModal() {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-review="true"]').forEach(function(el){
+    el.addEventListener('click', openModal);
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', function(e){ if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && backdrop.classList.contains('is-open')) closeModal(); });
+
+  if (mobileBtn && mobilePanel) {
+    mobileBtn.addEventListener('click', function(){
+      mobilePanel.classList.toggle('is-open');
+    });
+  }
+})();
+</script>
+</body>
+</html>
